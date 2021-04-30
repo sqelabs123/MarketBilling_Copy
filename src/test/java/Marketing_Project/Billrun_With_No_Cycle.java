@@ -830,13 +830,18 @@ public class Billrun_With_No_Cycle extends Login_site {
 		action_obj.Run_Bill().click();
 		Thread.sleep(5000);
 		
+		//Assert Process All Customers popup
+	    Assertion_obj.Assertion_Process_All_Customers();
+	    Thread.sleep(1000);
+		
+		
 		//Assert completion of Bill Run
-		Assertion_obj.Assert_Success_Bill_Run();
-		Thread.sleep(1000);
+		//Assertion_obj.Assert_Success_Bill_Run();
+		//Thread.sleep(1000);
 
 		//Click on View Button
-		action_obj.View_Bill_Run_Statement().click();
-		Thread.sleep(1000);
+		//action_obj.View_Bill_Run_Statement().click();
+		//Thread.sleep(1000);
 
 	}
 

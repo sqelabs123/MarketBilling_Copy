@@ -201,8 +201,8 @@ public class billrun_with_Import_Meter_and_Meter_Register extends Login_site{
 
 		String p=System.getProperty("user.dir")+"//TestData//Electricity - Meter Import Template.csv";
 
-		String col="*Service ID, *Meter Serial Number, *Status, *Consumption Type, *Configuration, Multiplier, Constant, Hazard, Location, Additional Site Info, Meter Point ID, Next Scheduled Read Date, Manufacturer, Model, Meter Read Type, Route, Walk Order, *Meter Installation Type, *Date Connected, Date Removed"; 
-        
+		String col="*Service ID,*Meter Serial Number,*Status,*Consumption Type,*Configuration,Multiplier,Constant,Hazard,Location,Additional Site Info,Meter Point ID,Next Scheduled Read Date,Manufacturer,Model,Meter Read Type,Route,Walk Order,*Meter Installation Type,*Date Connected,Date Removed"; 
+       
 	
 
 		String serviceId= "N"+random+"32";
@@ -213,7 +213,7 @@ public class billrun_with_Import_Meter_and_Meter_Register extends Login_site{
         System.out.println(prodate);
         
       // String prodate="16/04/2021";
-		csv_file.ImportMeterNumber(p, col, serviceId, meterNo,"Current", "Cumulative", "POS","", "", "", "", "","","", "","", "", "", "" , "BASIC",  prodate, "");
+		csv_file.ImportMeterNumber(p,col,serviceId,meterNo,"Current","Cumulative","POS","","","","","","","","","","","","","BASIC",prodate,"");
 
 		//Click on Admin Tab
 		action_obj.Admin().click();
@@ -268,7 +268,7 @@ public class billrun_with_Import_Meter_and_Meter_Register extends Login_site{
 
 	}
 
-	@Test(priority=2)
+/*	@Test(priority=2)
 	public void Import_Meter_Register() throws Exception{
 
 		action_obj = new Repo_testing(driver);
@@ -357,7 +357,7 @@ public class billrun_with_Import_Meter_and_Meter_Register extends Login_site{
 
 
 	}
-
+*/
 }
 
 

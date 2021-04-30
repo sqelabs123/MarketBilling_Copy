@@ -203,19 +203,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 
-		//By Search residential Customer
-		//singleCustomer= a.ResidentialCustomer;
-		//action_obj.Searchfield().sendKeys("36197");
-
-		//action_obj.SearchButton().click();
-
-		//Get residential customer
-		// resi= driver.findElement(By.xpath("(//td[@class='sorting_1']/a)[4]")).getText();
-		// Thread.sleep(4000);
-		// action_obj.Searchfield().sendKeys(resi);
-		// Thread.sleep(2000);
-		// action_obj.SearchButton().click();
-
+		
 	 	//Click on Service Tab
 		action_obj.ServicesTab().click();
 		//Thread.sleep(1000);

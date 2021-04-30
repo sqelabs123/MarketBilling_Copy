@@ -182,7 +182,8 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		Thread.sleep(3000);
 		// Rating Method
 		Select RatMethod = new Select(action_obj.Rating_method());
-		RatMethod.selectByValue("B9");
+		//RatMethod.selectByValue("B9");
+		RatMethod.selectByValue("C1");
 		// RatMethod.selectByIndex(1);
 		Thread.sleep(3000);
 		// action_obj.Demand_Threshold().sendKeys("10.45");

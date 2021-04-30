@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="3" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="67" passed="66">
   <reporter-output>
+    <line>
+      <![CDATA[Process all Customers popup not displayed-----Expected condition failed: waiting for element to be clickable: By.xpath: .//b[contains(text(),'Processing All Customers')] (tried for 60 second(s) with 500 milliseconds interval)]]>
+    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="297889" started-at="2021-04-16T11:15:21Z" finished-at="2021-04-16T11:20:19Z">
+  <suite name="Suite" duration-ms="3121966" started-at="2021-04-26T05:39:52Z" finished-at="2021-04-26T06:31:54Z">
     <groups>
     </groups>
-    <test name="billrun with import meter and meter register" duration-ms="297889" started-at="2021-04-16T11:15:21Z" finished-at="2021-04-16T11:20:19Z">
-      <class name="Marketing_Project.billrun_with_Import_Meter_and_Meter_Register">
-        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.billrun_with_Import_Meter_and_Meter_Register@4bec1f0c]" name="Login" is-config="true" duration-ms="15962" started-at="2021-04-16T11:15:21Z" finished-at="2021-04-16T11:15:37Z">
+    <test name="Import TOU File And Add Plans" duration-ms="178699" started-at="2021-04-26T05:39:52Z" finished-at="2021-04-26T05:42:50Z">
+      <class name="Marketing_Project.Market_TOU_FIle_and_AddPlan">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Login" is-config="true" duration-ms="10729" started-at="2021-04-26T05:39:52Z" finished-at="2021-04-26T05:40:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[markettest777@yopmail.com]]>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
               </value>
             </param>
             <param index="1">
@@ -21,156 +24,493 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://markettest.utilibill.com.au/marketbilling/]]>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="Add_Customer_and_Service()[pri:0, instance:Marketing_Project.billrun_with_Import_Meter_and_Meter_Register@4bec1f0c]" name="Add_Customer_and_Service" duration-ms="76761" started-at="2021-04-16T11:15:37Z" finished-at="2021-04-16T11:16:54Z">
+        <test-method status="PASS" signature="Import_TOU_Definition()[pri:0, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Import_TOU_Definition" duration-ms="35765" started-at="2021-04-26T05:40:02Z" finished-at="2021-04-26T05:40:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Import_TOU_Definition -->
+        <test-method status="PASS" signature="Add_Simple_Plan()[pri:1, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Add_Simple_Plan" duration-ms="9570" started-at="2021-04-26T05:40:38Z" finished-at="2021-04-26T05:40:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Simple_Plan -->
+        <test-method status="PASS" signature="Add_planWith_NetworkRats()[pri:2, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Add_planWith_NetworkRats" duration-ms="29258" started-at="2021-04-26T05:40:48Z" finished-at="2021-04-26T05:41:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_planWith_NetworkRats -->
+        <test-method status="PASS" signature="Add_PlanWith_RetailRates()[pri:3, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Add_PlanWith_RetailRates" duration-ms="46810" started-at="2021-04-26T05:41:17Z" finished-at="2021-04-26T05:42:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_PlanWith_RetailRates -->
+        <test-method status="PASS" signature="Other_plan()[pri:4, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Other_plan" duration-ms="21515" started-at="2021-04-26T05:42:04Z" finished-at="2021-04-26T05:42:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Other_plan -->
+        <test-method status="PASS" signature="Add_ProRated_Rates()[pri:5, instance:Marketing_Project.Market_TOU_FIle_and_AddPlan@69ea3742]" name="Add_ProRated_Rates" duration-ms="25007" started-at="2021-04-26T05:42:25Z" finished-at="2021-04-26T05:42:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_ProRated_Rates -->
+      </class> <!-- Marketing_Project.Market_TOU_FIle_and_AddPlan -->
+    </test> <!-- Import TOU File And Add Plans -->
+    <test name="Add All Type of Customers and its Services" duration-ms="239603" started-at="2021-04-26T05:42:50Z" finished-at="2021-04-26T05:46:50Z">
+      <class name="Marketing_Project.Market_All_Cusotmer">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Login" is-config="true" duration-ms="9643" started-at="2021-04-26T05:42:50Z" finished-at="2021-04-26T05:43:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Customer_Type_Residential()[pri:0, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Customer_Type_Residential" duration-ms="45738" started-at="2021-04-26T05:43:00Z" finished-at="2021-04-26T05:43:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customer_Type_Residential -->
+        <test-method status="PASS" signature="Customer_Type_Business()[pri:1, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Customer_Type_Business" duration-ms="34857" started-at="2021-04-26T05:43:46Z" finished-at="2021-04-26T05:44:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customer_Type_Business -->
+        <test-method status="PASS" signature="Customer_Type_Commercial()[pri:2, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Customer_Type_Commercial" duration-ms="43461" started-at="2021-04-26T05:44:21Z" finished-at="2021-04-26T05:45:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customer_Type_Commercial -->
+        <test-method status="PASS" signature="Add_Provisional_Service()[pri:3, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Add_Provisional_Service" duration-ms="41423" started-at="2021-04-26T05:45:04Z" finished-at="2021-04-26T05:45:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Provisional_Service -->
+        <test-method status="PASS" signature="Add_Service_ND_Update()[pri:4, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Add_Service_ND_Update" duration-ms="37702" started-at="2021-04-26T05:45:46Z" finished-at="2021-04-26T05:46:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Service_ND_Update -->
+        <test-method status="PASS" signature="Update_service_Commercial()[pri:5, instance:Marketing_Project.Market_All_Cusotmer@6fc6f14e]" name="Update_service_Commercial" duration-ms="26766" started-at="2021-04-26T05:46:23Z" finished-at="2021-04-26T05:46:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Update_service_Commercial -->
+      </class> <!-- Marketing_Project.Market_All_Cusotmer -->
+    </test> <!-- Add All Type of Customers and its Services -->
+    <test name="All Customers Billrun With No_Cycle" duration-ms="356429" started-at="2021-04-26T05:46:50Z" finished-at="2021-04-26T05:52:46Z">
+      <class name="Marketing_Project.Billrun_With_No_Cycle">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Login" is-config="true" duration-ms="9734" started-at="2021-04-26T05:46:50Z" finished-at="2021-04-26T05:47:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Add_Meter()[pri:0, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Add_Meter" duration-ms="31498" started-at="2021-04-26T05:47:00Z" finished-at="2021-04-26T05:47:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter -->
+        <test-method status="PASS" signature="Add_Meter_Register()[pri:1, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Add_Meter_Register" duration-ms="11322" started-at="2021-04-26T05:47:31Z" finished-at="2021-04-26T05:47:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Register -->
+        <test-method status="PASS" signature="Add_Meter_Reads()[pri:2, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Add_Meter_Reads" duration-ms="46539" started-at="2021-04-26T05:47:43Z" finished-at="2021-04-26T05:48:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Reads -->
+        <test-method status="PASS" signature="Add_Metering_Commercial_Customer()[pri:3, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Add_Metering_Commercial_Customer" duration-ms="89620" started-at="2021-04-26T05:48:29Z" finished-at="2021-04-26T05:49:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Metering_Commercial_Customer -->
+        <test-method status="PASS" signature="Add_Metering_Business_Customer()[pri:4, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Add_Metering_Business_Customer" duration-ms="89285" started-at="2021-04-26T05:49:59Z" finished-at="2021-04-26T05:51:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Metering_Business_Customer -->
+        <test-method status="FAIL" signature="Bill_Run_Without_Selecting_Cycle()[pri:5, instance:Marketing_Project.Billrun_With_No_Cycle@13a5fe33]" name="Bill_Run_Without_Selecting_Cycle" duration-ms="78413" started-at="2021-04-26T05:51:28Z" finished-at="2021-04-26T05:52:46Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at Re_Useable.Assertion_Test.Assertion_Process_All_Customers(Assertion_Test.java:325)
+at Marketing_Project.Billrun_With_No_Cycle.Bill_Run_Without_Selecting_Cycle(Billrun_With_No_Cycle.java:834)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Process all Customers popup not displayed-----Expected condition failed: waiting for element to be clickable: By.xpath: .//b[contains(text(),'Processing All Customers')] (tried for 60 second(s) with 500 milliseconds interval)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Bill_Run_Without_Selecting_Cycle -->
+      </class> <!-- Marketing_Project.Billrun_With_No_Cycle -->
+    </test> <!-- All Customers Billrun With No_Cycle -->
+    <test name="Single Customer Bill Run, Rollback and Rebill" duration-ms="260320" started-at="2021-04-26T05:52:47Z" finished-at="2021-04-26T05:57:07Z">
+      <class name="Marketing_Project.Single_Customer_Bill_Run">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Login" is-config="true" duration-ms="9558" started-at="2021-04-26T05:52:47Z" finished-at="2021-04-26T05:52:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Add_Customer_and_Service()[pri:0, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Add_Customer_and_Service" duration-ms="71186" started-at="2021-04-26T05:52:56Z" finished-at="2021-04-26T05:54:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Customer_and_Service -->
-        <test-method status="FAIL" signature="Import_Meter_Number()[pri:1, instance:Marketing_Project.billrun_with_Import_Meter_and_Meter_Register@4bec1f0c]" name="Import_Meter_Number" duration-ms="107036" started-at="2021-04-16T11:16:54Z" finished-at="2021-04-16T11:18:41Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":".//*[contains(text(),'Import Successful!')]"}
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-Q496GAK', ip: '172.16.5.160', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53958}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 4dff1c186ab3e5523db23a14a1223157
-*** Element info: {Using=xpath, value=.//*[contains(text(),'Import Successful!')]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//*[contains(text(),'Import Successful!')]"}
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-Q496GAK', ip: '172.16.5.160', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53958}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 4dff1c186ab3e5523db23a14a1223157
-*** Element info: {Using=xpath, value=.//*[contains(text(),'Import Successful!')]}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at Marketing_Project.billrun_with_Import_Meter_and_Meter_Register.Import_Meter_Number(billrun_with_Import_Meter_and_Meter_Register.java:258)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method status="PASS" signature="Add_Meter()[pri:1, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Add_Meter" duration-ms="15694" started-at="2021-04-26T05:54:07Z" finished-at="2021-04-26T05:54:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Import_Meter_Number -->
-        <test-method status="FAIL" signature="Import_Meter_Register()[pri:2, instance:Marketing_Project.billrun_with_Import_Meter_and_Meter_Register@4bec1f0c]" name="Import_Meter_Register" duration-ms="98085" started-at="2021-04-16T11:18:41Z" finished-at="2021-04-16T11:20:19Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":".//*[contains(text(),'Import Successful!')]"}
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-Q496GAK', ip: '172.16.5.160', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53958}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 4dff1c186ab3e5523db23a14a1223157
-*** Element info: {Using=xpath, value=.//*[contains(text(),'Import Successful!')]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//*[contains(text(),'Import Successful!')]"}
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-Q496GAK', ip: '172.16.5.160', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.128, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53958}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 4dff1c186ab3e5523db23a14a1223157
-*** Element info: {Using=xpath, value=.//*[contains(text(),'Import Successful!')]}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at Marketing_Project.billrun_with_Import_Meter_and_Meter_Register.Import_Meter_Register(billrun_with_Import_Meter_and_Meter_Register.java:332)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- Add_Meter -->
+        <test-method status="PASS" signature="Add_Meter_Register()[pri:2, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Add_Meter_Register" duration-ms="10326" started-at="2021-04-26T05:54:23Z" finished-at="2021-04-26T05:54:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Import_Meter_Register -->
-      </class> <!-- Marketing_Project.billrun_with_Import_Meter_and_Meter_Register -->
-    </test> <!-- billrun with import meter and meter register -->
+        </test-method> <!-- Add_Meter_Register -->
+        <test-method status="PASS" signature="Add_Meter_Reads()[pri:3, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Add_Meter_Reads" duration-ms="45214" started-at="2021-04-26T05:54:33Z" finished-at="2021-04-26T05:55:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Reads -->
+        <test-method status="PASS" signature="Add_BillRun_Cycle()[pri:4, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Add_BillRun_Cycle" duration-ms="24195" started-at="2021-04-26T05:55:18Z" finished-at="2021-04-26T05:55:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_BillRun_Cycle -->
+        <test-method status="PASS" signature="Bill_Run()[pri:5, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Bill_Run" duration-ms="22498" started-at="2021-04-26T05:55:43Z" finished-at="2021-04-26T05:56:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bill_Run -->
+        <test-method status="PASS" signature="Full_Statement_Rollback()[pri:6, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Full_Statement_Rollback" duration-ms="17843" started-at="2021-04-26T05:56:05Z" finished-at="2021-04-26T05:56:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Full_Statement_Rollback -->
+        <test-method status="PASS" signature="Single_Customer_Rollback()[pri:7, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Single_Customer_Rollback" duration-ms="38591" started-at="2021-04-26T05:56:23Z" finished-at="2021-04-26T05:57:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Single_Customer_Rollback -->
+        <test-method status="PASS" signature="Check_Rebill_Button()[pri:8, instance:Marketing_Project.Single_Customer_Bill_Run@18eed359]" name="Check_Rebill_Button" duration-ms="5202" started-at="2021-04-26T05:57:02Z" finished-at="2021-04-26T05:57:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Check_Rebill_Button -->
+      </class> <!-- Marketing_Project.Single_Customer_Bill_Run -->
+    </test> <!-- Single Customer Bill Run, Rollback and Rebill -->
+    <test name="Two Customers Bill Run, Rollback and Rebill" duration-ms="474969" started-at="2021-04-26T05:57:07Z" finished-at="2021-04-26T06:05:02Z">
+      <class name="Marketing_Project.Two_Customers_Bill_Run">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Login" is-config="true" duration-ms="9846" started-at="2021-04-26T05:57:07Z" finished-at="2021-04-26T05:57:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Add_First_Customer_and_Service()[pri:0, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_First_Customer_and_Service" duration-ms="73271" started-at="2021-04-26T05:57:17Z" finished-at="2021-04-26T05:58:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_First_Customer_and_Service -->
+        <test-method status="PASS" signature="Add_Meter()[pri:1, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_Meter" duration-ms="16986" started-at="2021-04-26T05:58:30Z" finished-at="2021-04-26T05:58:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter -->
+        <test-method status="PASS" signature="Add_Meter_Register()[pri:2, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_Meter_Register" duration-ms="11326" started-at="2021-04-26T05:58:47Z" finished-at="2021-04-26T05:58:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Register -->
+        <test-method status="PASS" signature="Add_Meter_Reads()[pri:3, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_Meter_Reads" duration-ms="44804" started-at="2021-04-26T05:58:58Z" finished-at="2021-04-26T05:59:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Reads -->
+        <test-method status="PASS" signature="Add_Second_Customer_and_Service()[pri:4, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_Second_Customer_and_Service" duration-ms="70727" started-at="2021-04-26T05:59:43Z" finished-at="2021-04-26T06:00:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Second_Customer_and_Service -->
+        <test-method status="PASS" signature="Add_Metering_Second_Customer()[pri:5, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_Metering_Second_Customer" duration-ms="82733" started-at="2021-04-26T06:00:54Z" finished-at="2021-04-26T06:02:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Metering_Second_Customer -->
+        <test-method status="PASS" signature="Add_BillRun_Cycle()[pri:6, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Add_BillRun_Cycle" duration-ms="33985" started-at="2021-04-26T06:02:17Z" finished-at="2021-04-26T06:02:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_BillRun_Cycle -->
+        <test-method status="PASS" signature="Bill_Run()[pri:7, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Bill_Run" duration-ms="23825" started-at="2021-04-26T06:02:51Z" finished-at="2021-04-26T06:03:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bill_Run -->
+        <test-method status="PASS" signature="Full_Statement_Rollback()[pri:8, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Full_Statement_Rollback" duration-ms="7796" started-at="2021-04-26T06:03:14Z" finished-at="2021-04-26T06:03:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Full_Statement_Rollback -->
+        <test-method status="PASS" signature="Single_Customer_Rollback()[pri:9, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Single_Customer_Rollback" duration-ms="48225" started-at="2021-04-26T06:03:22Z" finished-at="2021-04-26T06:04:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Single_Customer_Rollback -->
+        <test-method status="PASS" signature="Rebill_and_Reuse_Statement()[pri:10, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Rebill_and_Reuse_Statement" duration-ms="20434" started-at="2021-04-26T06:04:10Z" finished-at="2021-04-26T06:04:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rebill_and_Reuse_Statement -->
+        <test-method status="PASS" signature="Rebill_with_new_Statement()[pri:11, instance:Marketing_Project.Two_Customers_Bill_Run@eec5a4a]" name="Rebill_with_new_Statement" duration-ms="30994" started-at="2021-04-26T06:04:31Z" finished-at="2021-04-26T06:05:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rebill_with_new_Statement -->
+      </class> <!-- Marketing_Project.Two_Customers_Bill_Run -->
+    </test> <!-- Two Customers Bill Run, Rollback and Rebill -->
+    <test name="More Than two Customers Bill Run, Rollback and Rebill" duration-ms="630931" started-at="2021-04-26T06:05:02Z" finished-at="2021-04-26T06:15:33Z">
+      <class name="Marketing_Project.Large_Bill_Run">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Login" is-config="true" duration-ms="9208" started-at="2021-04-26T06:05:02Z" finished-at="2021-04-26T06:05:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Add_First_Customer_and_Service()[pri:0, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_First_Customer_and_Service" duration-ms="72699" started-at="2021-04-26T06:05:11Z" finished-at="2021-04-26T06:06:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_First_Customer_and_Service -->
+        <test-method status="PASS" signature="Add_Meter()[pri:1, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Meter" duration-ms="16170" started-at="2021-04-26T06:06:24Z" finished-at="2021-04-26T06:06:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter -->
+        <test-method status="PASS" signature="Add_Meter_Register()[pri:2, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Meter_Register" duration-ms="11185" started-at="2021-04-26T06:06:40Z" finished-at="2021-04-26T06:06:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Register -->
+        <test-method status="PASS" signature="Add_Meter_Reads()[pri:3, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Meter_Reads" duration-ms="45721" started-at="2021-04-26T06:06:51Z" finished-at="2021-04-26T06:07:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Meter_Reads -->
+        <test-method status="PASS" signature="Add_Second_Customer_and_Service()[pri:4, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Second_Customer_and_Service" duration-ms="70922" started-at="2021-04-26T06:07:37Z" finished-at="2021-04-26T06:08:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Second_Customer_and_Service -->
+        <test-method status="PASS" signature="Add_Metering_Second_Customer()[pri:5, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Metering_Second_Customer" duration-ms="80948" started-at="2021-04-26T06:08:48Z" finished-at="2021-04-26T06:10:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Metering_Second_Customer -->
+        <test-method status="PASS" signature="Add_Third_Customer_and_Service()[pri:6, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Third_Customer_and_Service" duration-ms="71202" started-at="2021-04-26T06:10:09Z" finished-at="2021-04-26T06:11:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Third_Customer_and_Service -->
+        <test-method status="PASS" signature="Add_Metering_Third_Customer()[pri:7, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_Metering_Third_Customer" duration-ms="81381" started-at="2021-04-26T06:11:20Z" finished-at="2021-04-26T06:12:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Metering_Third_Customer -->
+        <test-method status="PASS" signature="Add_BillRun_Cycle()[pri:8, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Add_BillRun_Cycle" duration-ms="40270" started-at="2021-04-26T06:12:41Z" finished-at="2021-04-26T06:13:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_BillRun_Cycle -->
+        <test-method status="PASS" signature="Bill_Run()[pri:9, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Bill_Run" duration-ms="23947" started-at="2021-04-26T06:13:22Z" finished-at="2021-04-26T06:13:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bill_Run -->
+        <test-method status="PASS" signature="Full_Statement_Rollback()[pri:10, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Full_Statement_Rollback" duration-ms="7925" started-at="2021-04-26T06:13:46Z" finished-at="2021-04-26T06:13:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Full_Statement_Rollback -->
+        <test-method status="PASS" signature="Single_Customer_Rollback()[pri:11, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Single_Customer_Rollback" duration-ms="48597" started-at="2021-04-26T06:13:53Z" finished-at="2021-04-26T06:14:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Single_Customer_Rollback -->
+        <test-method status="PASS" signature="Rebill_and_Reuse_Statement()[pri:12, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Rebill_and_Reuse_Statement" duration-ms="20496" started-at="2021-04-26T06:14:42Z" finished-at="2021-04-26T06:15:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rebill_and_Reuse_Statement -->
+        <test-method status="PASS" signature="Rebill_with_new_Statement()[pri:13, instance:Marketing_Project.Large_Bill_Run@369f73a2]" name="Rebill_with_new_Statement" duration-ms="30228" started-at="2021-04-26T06:15:03Z" finished-at="2021-04-26T06:15:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rebill_with_new_Statement -->
+      </class> <!-- Marketing_Project.Large_Bill_Run -->
+    </test> <!-- More Than two Customers Bill Run, Rollback and Rebill -->
+    <test name="Update Customer Service Details" duration-ms="196212" started-at="2021-04-26T06:15:33Z" finished-at="2021-04-26T06:18:49Z">
+      <class name="Marketing_Project.Customer_Update">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Login" is-config="true" duration-ms="9625" started-at="2021-04-26T06:15:33Z" finished-at="2021-04-26T06:15:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Add_Customer()[pri:0, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Add_Customer" duration-ms="22869" started-at="2021-04-26T06:15:42Z" finished-at="2021-04-26T06:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Customer -->
+        <test-method status="PASS" signature="Add_Service_ND_Update()[pri:1, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Add_Service_ND_Update" duration-ms="64225" started-at="2021-04-26T06:16:05Z" finished-at="2021-04-26T06:17:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Service_ND_Update -->
+        <test-method status="PASS" signature="Add_Siteparamenter()[pri:2, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Add_Siteparamenter" duration-ms="17095" started-at="2021-04-26T06:17:09Z" finished-at="2021-04-26T06:17:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Siteparamenter -->
+        <test-method status="PASS" signature="AddSite_plan_fromService()[pri:3, instance:Marketing_Project.Customer_Update@2b9627bc]" name="AddSite_plan_fromService" duration-ms="48534" started-at="2021-04-26T06:17:27Z" finished-at="2021-04-26T06:18:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddSite_plan_fromService -->
+        <test-method status="PASS" signature="Add_BillRun_Cycle()[pri:4, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Add_BillRun_Cycle" duration-ms="28920" started-at="2021-04-26T06:18:15Z" finished-at="2021-04-26T06:18:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_BillRun_Cycle -->
+        <test-method status="PASS" signature="Edit_BillRUn()[pri:5, instance:Marketing_Project.Customer_Update@2b9627bc]" name="Edit_BillRUn" duration-ms="4930" started-at="2021-04-26T06:18:44Z" finished-at="2021-04-26T06:18:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Edit_BillRUn -->
+      </class> <!-- Marketing_Project.Customer_Update -->
+    </test> <!-- Update Customer Service Details -->
+    <test name="Run Bill to Check Auto Due Date Feature for All Customer type" duration-ms="784678" started-at="2021-04-26T06:18:49Z" finished-at="2021-04-26T06:31:54Z">
+      <class name="Marketing_Project.Enable_Auto_Due_Date">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Login" is-config="true" duration-ms="9627" started-at="2021-04-26T06:18:49Z" finished-at="2021-04-26T06:18:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[utbrxuat77a@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C123456789@c]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://utbrxuat.utilibill.com.au/utbrx/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="Enable_Due_Date_By_Payment_Terms()[pri:0, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Enable_Due_Date_By_Payment_Terms" duration-ms="19125" started-at="2021-04-26T06:18:59Z" finished-at="2021-04-26T06:19:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Enable_Due_Date_By_Payment_Terms -->
+        <test-method status="PASS" signature="Add_Commercial_customer()[pri:1, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Add_Commercial_customer" duration-ms="153988" started-at="2021-04-26T06:19:18Z" finished-at="2021-04-26T06:21:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Commercial_customer -->
+        <test-method status="PASS" signature="Add_Residential_Customer()[pri:2, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Add_Residential_Customer" duration-ms="141535" started-at="2021-04-26T06:21:52Z" finished-at="2021-04-26T06:24:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Residential_Customer -->
+        <test-method status="PASS" signature="Add_Bussiness_Customer()[pri:3, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Add_Bussiness_Customer" duration-ms="140159" started-at="2021-04-26T06:24:13Z" finished-at="2021-04-26T06:26:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_Bussiness_Customer -->
+        <test-method status="PASS" signature="Add_BillRun_Cycle()[pri:4, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Add_BillRun_Cycle" duration-ms="40438" started-at="2021-04-26T06:26:33Z" finished-at="2021-04-26T06:27:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_BillRun_Cycle -->
+        <test-method status="PASS" signature="Calender_Days_Due_Date()[pri:5, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Calender_Days_Due_Date" duration-ms="35683" started-at="2021-04-26T06:27:14Z" finished-at="2021-04-26T06:27:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Calender_Days_Due_Date -->
+        <test-method status="PASS" signature="End_of_Month_Due_Date()[pri:6, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="End_of_Month_Due_Date" duration-ms="62902" started-at="2021-04-26T06:27:50Z" finished-at="2021-04-26T06:28:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- End_of_Month_Due_Date -->
+        <test-method status="PASS" signature="Business_Days_Due_Date()[pri:7, instance:Marketing_Project.Enable_Auto_Due_Date@6e0e048a]" name="Business_Days_Due_Date" duration-ms="181208" started-at="2021-04-26T06:28:52Z" finished-at="2021-04-26T06:31:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Business_Days_Due_Date -->
+      </class> <!-- Marketing_Project.Enable_Auto_Due_Date -->
+    </test> <!-- Run Bill to Check Auto Due Date Feature for All Customer type -->
   </suite> <!-- Suite -->
 </testng-results>

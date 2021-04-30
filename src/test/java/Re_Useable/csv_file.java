@@ -89,7 +89,10 @@ public class csv_file {
 				fileWriter.append(COMMA_DELIMITER);
 				
 				fileWriter.append( Date2);
-				//fileWriter.append(COMMA_DELIMITER);
+			//	fileWriter.append(COMMA_DELIMITER);
+				
+				//Add a new line separator after the header
+				fileWriter.append(NEW_LINE_SEPARATOR);
 				
 				
 

@@ -34,9 +34,9 @@
 			<class name="Marketing_Project.Billrun_With_No_Cycle" />
 
 		</classes>
-	</test> 
+	</test> -->
 
-
+<!-- 
 	<test thread-count="5" name="Single Customer Bill Run, Rollback and Rebill">
 
 		<classes>
@@ -79,7 +79,7 @@
 			<class name="Marketing_Project.Enable_Auto_Due_Date" />
 
 		</classes>
-	</test>     -->
+	</test>      -->
 	
  <!-- <test thread-count="5" name="Run Bill to Check Auto Due Date Feature for All Customer type">
 
@@ -90,7 +90,7 @@
 		</classes>
 	</test>  -->
 	
-	 <test thread-count="5" name="billrun with import meter and meter register">
+  <test thread-count="5" name="billrun with import meter and meter register">
 
 		<classes>
 
@@ -98,8 +98,7 @@
 
 		</classes>
 	</test> 
- 
-  
+
 </suite> <!-- Suite -->
 
 

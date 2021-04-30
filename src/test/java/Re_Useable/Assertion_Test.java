@@ -314,6 +314,21 @@ public class Assertion_Test {
 					
 				}	
 				
+				
+				//Success_Bill_Run	
+				public static  String Ex_processAllCustomers;
+				public static  String Act_processAllCustomers;
+				public  void Assertion_Process_All_Customers()  throws Exception 
+				{ 
+					
+					//System.out.println(Ex_home=td.get_string_CellData("Assertion", 0, 0));
+					Act_processAllCustomers=Robj.Process_All_Customers().getText();
+					Ex_processAllCustomers="Processing All Customers";
+					Assert.assertEquals(Act_processAllCustomers,Ex_processAllCustomers);
+					System.out.println("Validation == PASS :: Status Change is displayed ");
+					
+				}	
+				
 	//Updated--------------------------------------------------------------------------------------------------->			
 				
 				

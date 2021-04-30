@@ -2,17 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="password" value="C123456789@c"/>
-  <parameter name="userId" value="markettest777@yopmail.com"/>
-  <parameter name="url" value="https://markettest.utilibill.com.au/marketbilling/"/>
-  <test thread-count="5" name="billrun with import meter and meter register(failed)">
+  <parameter name="userId" value="utbrxuat77a@yopmail.com"/>
+  <parameter name="url" value="https://utbrxuat.utilibill.com.au/utbrx/"/>
+  <test thread-count="5" name="All Customers Billrun With No_Cycle(failed)">
     <classes>
-      <class name="Marketing_Project.billrun_with_Import_Meter_and_Meter_Register">
+      <class name="Marketing_Project.Billrun_With_No_Cycle">
         <methods>
-          <include name="Import_Meter_Register"/>
           <include name="Login"/>
-          <include name="Import_Meter_Number"/>
+          <include name="Bill_Run_Without_Selecting_Cycle"/>
         </methods>
-      </class> <!-- Marketing_Project.billrun_with_Import_Meter_and_Meter_Register -->
+      </class> <!-- Marketing_Project.Billrun_With_No_Cycle -->
     </classes>
-  </test> <!-- billrun with import meter and meter register(failed) -->
+  </test> <!-- All Customers Billrun With No_Cycle(failed) -->
 </suite> <!-- Failed suite [Suite] -->

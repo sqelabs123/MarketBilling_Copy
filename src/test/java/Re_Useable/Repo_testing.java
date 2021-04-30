@@ -3493,6 +3493,25 @@ public class Repo_testing
 					return null;	
 				}	
 				
+				//processAllCustomers
+				public WebElement Process_All_Customers() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Process all Customers popup should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("processAllCustomers")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Process all Customers popup not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Process all Customers popup not displayed-----");
+					}
+					return null;	
+				}	
+				
+				
+				
+				
+				
 				
 				//custManage
 				public WebElement Cust_manage() 
@@ -4094,6 +4113,164 @@ public class Repo_testing
 					} 
 					return null;	
 				}
+				
+				
+				
+				//PIT_Front
+				public WebElement PIT_Front() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Primary Invoice Template Front dropdown should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("PIT_Front")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Primary Invoice Template Front dropdown not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Primary Invoice Template Front dropdown not displayed-----");
+					} 
+					return null;	
+				}
+					
+				
+				
+				//PIT_Back
+				public WebElement PIT_Back() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Primary Invoice Template Back dropdown should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("PIT_Back")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Primary Invoice Template Back dropdown not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Primary Invoice Template Back dropdown not displayed-----");
+					} 
+					return null;	
+				}
+					
+				
+				//SIT_Front
+				public WebElement SIT_Front() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Secondary Invoice Template Front dropdown should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("SIT_Front")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Secondary Invoice Template Front dropdown not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Secondary Invoice Template Front dropdown not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//SIT_Back
+				public WebElement SIT_Back() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Secondary Invoice Template Back dropdown should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("SIT_Back")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Secondary Invoice Template Back dropdown not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Secondary Invoice Template Back dropdown not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Update Statement Dates
+				public WebElement Update_Statement_Dates() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Update Statement Dates button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("updateStatementDates")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Update Statement Dates button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Update Statement Dates button not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+				//Select Checkbox
+				public WebElement Select_Checkbox() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Checkbox icon should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("selectCheckbox")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Checkbox icon not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Checkbox icon not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+				//New Issue Date
+				public WebElement New_Issue_Date() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("New Issue Date field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("newIssueDate")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("New Issue Date field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("New Issue Date field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+				//New Due Date
+				public WebElement New_Due_Date() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("New Due Date field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("newDueDate")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("New Due Date field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("New Issue Date field not displayed-----");
+					} 
+					return null;	
+				}
+				
+			
+				//Update Button
+				public WebElement Update_Button() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Update Button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("updateButton")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Update Button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Update Button field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+				
+			
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				

@@ -129,10 +129,10 @@ public class Customer_Update extends Login_site {
 				// Enter NMI
 				//action_obj.NMISelct().sendKeys("MA" + random+"2");
 			// Add NMI Number
-				 action_obj.NMISelct().sendKeys("NM99129089");
+				 action_obj.NMISelct().sendKeys("NM14350986");
 				Thread.sleep(2000);
 				// Add NMI CheeckSUm
-				action_obj.NMi_CheckSum().sendKeys("9");
+				action_obj.NMi_CheckSum().sendKeys("6");
 
 				Thread.sleep(10000);
 				// Add NMi Classification Code
@@ -213,7 +213,7 @@ public class Customer_Update extends Login_site {
 				//serviceid = "NMI4975123";
 				//serviceid = driver.findElement(By.cssSelector("td.sorting_1")).getText();
 				//Assert.assertEquals(serviceid, "MA" + random+"2");
-				action_obj.SearchID1().sendKeys("NM99129089");
+				action_obj.SearchID1().sendKeys("NM14350986");
 				Assertion_obj.Assertion_serviceId1();
 				// Add NMI Number
 				//Assert.assertEquals(serviceid,"NMI4975123");
@@ -235,7 +235,7 @@ public class Customer_Update extends Login_site {
 
 				//action_obj.SearchID1().sendKeys("MA" + random+"2");
 				// Add NMI Number
-				action_obj.SearchID1().sendKeys("NM99129089");
+				action_obj.SearchID1().sendKeys("NM14350986");
 				Assertion_obj.Assertion_serviceId();
 
 		//Service Edit 
