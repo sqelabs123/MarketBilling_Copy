@@ -7,7 +7,7 @@ WinWait("[CLASS:#32770]","",10)
 Sleep(2000)
 ; Set the File name text on the Edit field
 
-  ControlSetText("Open", "", "Edit1", "G:\Market_Billing\TestData\TOU Definition Import Template.csv")
+  ControlSetText("Open", "", "Edit1", "D:\New_Project(UtilityBilling version 7)\Market_Billing\TestData\TOU Definition Import Template.csv")
 Sleep(2000)
 
 ; Click on the Open button

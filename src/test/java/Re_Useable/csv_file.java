@@ -77,14 +77,12 @@ public class csv_file {
 				
 				fileWriter.append( Walk_Order);
 				fileWriter.append(COMMA_DELIMITER);
-				
-				
+							
 				
 				fileWriter.append( Meter_Installation_Type);
 				fileWriter.append(COMMA_DELIMITER);
 				
 				
-			
 				fileWriter.append( Date);
 				fileWriter.append(COMMA_DELIMITER);
 				
@@ -181,7 +179,7 @@ public class csv_file {
 					fileWriter.append( dateRemoved);
 					//fileWriter.append(COMMA_DELIMITER);
 					
-				
+					fileWriter.append(NEW_LINE_SEPARATOR);
 					
 					
 
@@ -199,20 +197,8 @@ public class csv_file {
 					System.out.println("Error while flushing/closing fileWriter !!!");
 	                e.printStackTrace();
 				}
-				
-
-			
-		}	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+							
+		}			
 		
 		
 	}

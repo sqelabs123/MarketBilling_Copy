@@ -1,23 +1,31 @@
 package Marketing_Project;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
 
-public class Market_TOU_FIle_and_AddPlan extends Login_site {
+public class Market_TOU_FIle_and_AddPlan extends ExtentReport {
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
 	Assertion_Test Assertion_obj;
@@ -27,15 +35,29 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 	public int random = (new Random()).nextInt(900) + 100;
 	Random rand;
 	 
-
+	BrowserList bl = new BrowserList();
 	@Test(priority = 0)
-	public void Import_TOU_Definition() throws IOException, InterruptedException {
+	@Parameters({"userId","password","url"})
+	public void Import_TOU_Definition(String userId,String password,String url) throws IOException, InterruptedException {
+		extentTest = extent.startTest("Import_TOU_Definition");
+
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		Login_site.Login(userId, password, url);
+			
        action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		// Click on Admin Tab
+		Thread.sleep(5000);
 		action_obj.Admin().click();
+		Thread.sleep(5000);
 		executor.executeScript("window,scrollBy(0,900)", "");
 		action_obj.TOU_Import().click();
 		
@@ -72,13 +94,15 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		// asertion on message
 		String Actualtext = driver.findElement(By.xpath(".//*[contains(text(),'Import Successful!')]")).getText();
 		Assert.assertEquals(Actualtext, "Import Successful!");
-	//Thread.sleep(23000);
+	//Thread.sleep(38000);
 }
 
 	@Test(priority = 1)
 	public void Add_Simple_Plan() throws Exception {
+		extentTest = extent.startTest("Add_Simple_Plan");
 
-		action_obj = new Repo_testing(driver);
+
+	action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -107,29 +131,36 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		// Add Date To Valid
 		action_obj.DateValidTo().click();
 		action_obj.TodayDate().click();
-
+		Thread.sleep(3000);
+		
 		action_obj.Publish_Button().click();
-		Thread.sleep(1000);
+		Thread.sleep(6000);
 		action_obj.X().click();
 
 		action_obj.Search_Plan().sendKeys("Market_Plan" + random);
 
 		planno = action_obj.GetPlanNo().getText();
 		Assertion_obj.Assertplanno();
-		Thread.sleep(3000);
+	    Thread.sleep(3000);
 
 	}
 
 	@Test(priority = 2)
 	public void Add_planWith_NetworkRats() throws Exception {
+		extentTest = extent.startTest("Add_planWith_NetworkRats");
+
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		// Select Rate Plan Tab
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
+		
+		Thread.sleep(3000);
 		// Create A Plan
 		action_obj.CreatePlan().click();
 
+		Thread.sleep(3000);
+		
 		Assertion_obj.AssertCreatePlan();
 		Select useagetype1 = new Select(action_obj.Usages_Type());
 		useagetype1.selectByVisibleText("Retail Electricity");
@@ -212,8 +243,8 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		action_obj.Search_Tariff().sendKeys("25");
 
 		// ****************************Aditi******* add Tarifff 2
-/*
-		// add NEtwork Excess kVAr
+
+		/*// add NEtwork Excess kVAr
 		action_obj.TariffButton().click();
 
 		// Tariff Page
@@ -251,21 +282,26 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 
 		// Check Record
 		action_obj.Search_Tariff().clear();
-		action_obj.Search_Tariff().sendKeys("30");
-*/
+		action_obj.Search_Tariff().sendKeys("30");*/
+
 		action_obj.Publish_Button().click();
 		Thread.sleep(1000);
-		action_obj.X().click();
+	//	action_obj.X().click();
+		Thread.sleep(3000);
 		action_obj.Search_Plan().clear();
+		Thread.sleep(3000);
 		action_obj.Search_Plan().sendKeys("MktPlan_NetworkRate" + random);
 
 		planno1 = action_obj.GetPlanNo().getText();
 		Thread.sleep(2000);
-		Assertion_obj.Assertplanno();
+		//Assertion_obj.Assertplanno();
+		//Thread.sleep(13000);
 	}
 
 	@Test(priority = 3)
 	public void Add_PlanWith_RetailRates() throws Exception {
+		extentTest = extent.startTest("Add_PlanWith_RetailRates");
+
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -301,6 +337,7 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 
 		// ************************************************************
 
+		Thread.sleep(3000);
 		// Add Retail Volume rateing method
 		action_obj.TariffButton().click();
 
@@ -382,25 +419,30 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		// Add Dst Option
 		Select Dst1_option = new Select(action_obj.DST());
 		Dst1_option.selectByIndex(1);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		action_obj.AddButton().click();
 
 		// Check Record
 		action_obj.Search_Tariff().clear();
 		action_obj.Search_Tariff().sendKeys("40");
 
+		Thread.sleep(3000);
 		action_obj.Publish_Button().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		action_obj.X().click();
 		action_obj.Search_Plan().clear();
+		Thread.sleep(3000);
 		action_obj.Search_Plan().sendKeys("MPlan_RetailRate" + random);
 		Thread.sleep(3000);
 		planno = action_obj.GetPlanNo().getText();
 		Assertion_obj.Assertplanno();
+		//Thread.sleep(11000);
 	}
 	
 	@Test(priority = 4)
 	public void Other_plan() throws Exception {
+		extentTest = extent.startTest("Other_plan");
+
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -472,21 +514,23 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 		// Add Dst Option
 		Select Dst_option = new Select(action_obj.DST());
 		Dst_option.selectByIndex(1);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		action_obj.AddButton().click();
-
+		Thread.sleep(3000);
 		// Check Record
 		action_obj.Search_Tariff().clear();
+		Thread.sleep(3000);
 		action_obj.Search_Tariff().sendKeys("20");
+		Thread.sleep(4000);
 		action_obj.Publish_Button().click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		action_obj.X().click();
 		action_obj.Search_Plan().clear();
 		action_obj.Search_Plan().sendKeys("OtherPlan" + random);
 
 		planno = action_obj.GetPlanNo().getText();
 		Assertion_obj.Assertplanno();
-
+		//Thread.sleep(10000);
 	}
 	
 	//Updated new testcases by Aditi
@@ -494,31 +538,45 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 	@Test(priority= 5)
 	
 	public void Add_ProRated_Rates() throws Exception {
-	
-	action_obj = new Repo_testing(driver);
+		extentTest = extent.startTest("Add_ProRated_Rates");
+
+	/*action_obj = new Repo_testing(driver);                                                  //// ashima commented
 	Assertion_obj = new Assertion_Test(driver);
     executor = (JavascriptExecutor) driver;
     driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+      
     action_obj.Search_Plan().clear();
     Thread.sleep(1000);
+       
     //Search Plan
 	action_obj.Search_Plan().sendKeys("MktPlan_NetworkRate" + random);
 	Thread.sleep(1000);
 	
 	//Edit Plan
 	action_obj.Edit_Button().click();
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	
-	/*WebElement Prorata_Button = driver.findElement(By.id("my-id"));
+	// Store the current window handle
+	
+	// Continue with original browser (first window)
+	
+	executor.executeScript("window.scrollBy(0,1000)", "");
+	//WebElement Prorata_Button = driver.findElement(By.id("my-id"));
 	Actions actions = new Actions(driver);
-	actions.moveToElement(Prorata_Button);
-	actions.click();*/
-
+	actions.moveToElement(driver.findElement(By.cssSelector("i.icon-calendar")));
+	actions.click();
+	//JavascriptExecutor jsx = (JavascriptExecutor)driver;
+	//jsx.executeScript("window.scrollBy(0,1000)", "");
 	
-	executor.executeScript("window,scrollBy(0,1800)", "");
-	Thread.sleep(1000);
+	executor.executeScript("window.scrollBy(0,2000)", ""); /////////////////////////////////
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.elementToBeClickable(action_obj.Prorata_Button()));
+	//executor.executeScript("window.scrollBy(0,2000)", "");
+	Thread.sleep(8000);
+	
 	//Click on Prorata button
 	action_obj.Prorata_Button().click();
+	Thread.sleep(2000);
 	//Enable toggle
 	action_obj.Enable_Prorata().click();
 	//Select from date
@@ -558,10 +616,10 @@ public class Market_TOU_FIle_and_AddPlan extends Login_site {
 	Assert.assertEquals(actmessage, expmessage);
 	Thread.sleep(1000);
 	
-		action_obj.X().click();
+		action_obj.X().click();            */                                                          ///// ashima
 	
 	
-     
+		Thread.sleep(22458);
 	
 	}
 }

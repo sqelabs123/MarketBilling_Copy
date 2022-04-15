@@ -2,6 +2,8 @@ package Re_Useable;
 
 import org.testng.annotations.Test;
 
+import ExtentReports.ExtentReport;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -22,26 +24,27 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
-public class Login_site {
+public class Login_site extends ExtentReport{
 		
 		// TODO Auto-generated constructor stub
 	
-protected WebDriver driver;
+//public static WebDriver driver;
     
 	public static DesiredCapabilities capability;
 	
     
-	public Repo_testing action_obj;
-	public Assertion_Test Assertion_obj;
+	public static Repo_testing action_obj;
+	public static Assertion_Test Assertion_obj;
 	//public String Url="https://test.waterworkslms.com/waterworks";
 	
 	@BeforeClass
 	@Parameters({"userId","password","url"})
-	public void Login(String userId,String password,String url) throws IOException  {
+	public static void Login(String userId,String password,String url) throws IOException, InterruptedException  {
 		
 		action_obj = new Repo_testing(driver);
 		
@@ -85,13 +88,7 @@ protected WebDriver driver;
 			 
 		}*/
 		
-		
-		
-		
-		
-
-		
-		String downloadFilepath = "G:";
+		String downloadFilepath = "D:";
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 		chromePrefs.put("profile.default_content_settings.popups", 0);
 		chromePrefs.put("download.default_directory", downloadFilepath);
@@ -102,7 +99,7 @@ protected WebDriver driver;
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 
 
-	 	String exePath =  System.getProperty("user.dir") + "\\TestData\\chromedriver.exe";  //chrome driver address		
+	 	String exePath =  System.getProperty("user.dir") + "\\TestData\\chromedriver1.exe";  //chrome driver address		
 	 	System.setProperty("webdriver.chrome.driver", exePath);
 	 	
 		  /*String exePath = System.getProperty("user.dir") + "D:\\A_Projects\\M_Utility\\TestData\\chromedriver1.exe";*/
@@ -119,15 +116,19 @@ protected WebDriver driver;
 		System.out.println("@URL Opening......."+url);
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		driver.manage().window().maximize();		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(3000);//////////
+		
 		action_obj.useranme().sendKeys(userId);
 		action_obj.Password().sendKeys(password);
 		action_obj.loginbutton().click();
 		
-		/*//add new functionalily 
+	/*	//add new functionalily 
 		Select NewGroup=new Select(action_obj.Select_newGroup());
-		NewGroup.selectByIndex(2);
-		action_obj.Select_newGroup().click();*/
+		NewGroup.selectByVisibleText("Stanwell");
+		action_obj.Select_newGroup().click();
+		action_obj.Login_button().click();*/
 	}
 	/*@AfterClass
 	public void logout() throws InterruptedException, MalformedURLException {

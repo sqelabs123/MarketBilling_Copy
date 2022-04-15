@@ -4,7 +4,7 @@
  
       
    <parameter name="url" value="https://utbrxuat.utilibill.com.au/utbrx/"></parameter>
-	<parameter name="userId" value="utbrxuat77a@yopmail.com"></parameter>
+	<parameter name="userId" value="utbrxuat77@yopmail.com"></parameter>
 	<parameter name="password" value="C123456789@c"></parameter>
 	
     <test thread-count="5" name="Import TOU File And Add Plans">
@@ -67,6 +67,24 @@
 		<classes>
 
 			<class name="Marketing_Project.Customer_Update" />
+
+		</classes>
+	</test>   
+	
+	 <test thread-count="5" name="Bill run using Import and Payment">
+
+		<classes>
+
+			<class name="Marketing_Project.Bill_Run_With_Import_And_Transactions" />
+
+		</classes>
+	</test> 
+	
+	    <test thread-count="5" name="Update Statement Dates, Download statement and Email Statement">
+
+		<classes>
+
+			<class name="Marketing_Project.Other_Scenarios" />
 
 		</classes>
 	</test>    

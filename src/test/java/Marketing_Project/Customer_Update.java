@@ -11,13 +11,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
 
-public class Customer_Update extends Login_site {
+public class Customer_Update extends ExtentReport {
 
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
@@ -26,10 +29,22 @@ public class Customer_Update extends Login_site {
 	public String Customer;
 	public int random= (new Random()).nextInt(9000000)+1000000; 
 	Random rand;
+	BrowserList bl = new BrowserList();
 
 	@Test(priority=0)
-	public void Add_Customer() throws Exception {
-		action_obj =new Repo_testing(driver);
+	@Parameters({"userId","password","url"})
+	public void Add_Customer(String userId,String password,String url) throws Exception {
+extentTest = extent.startTest("createAdminAcc");
+
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		Login_site.Login(userId, password, url);
+		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
 		driver.navigate().refresh();
@@ -61,12 +76,12 @@ public class Customer_Update extends Login_site {
 		action_obj.CustomenrPIN().sendKeys("1230");
 		executor.executeScript("window,scrollBy(0,1800)", "");
 		Thread.sleep(2000);
-		/*//add Contrat Statrt Dates
+		//add Contrat Statrt Dates
 			action_obj.COntractStartDate().click();
 			Thread.sleep(2000);
 			action_obj.SelectToday().click();
 			action_obj.Contract_Term().sendKeys("10");
-			Thread.sleep(3000);*/
+			Thread.sleep(3000);
 		//Save Customer
 		action_obj.SaveCustomer().click();
 		Thread.sleep(2000);
@@ -98,14 +113,17 @@ public class Customer_Update extends Login_site {
 		Thread.sleep(1000);
 		executor.executeScript("window,scrollBy(0,-1800)", "");
 		//	    Assertion_obj.Assertion_Statuscheck();
-		Thread.sleep(3000);
+		Thread.sleep(3000);*/
+		
+		Thread.sleep(98999);
 	}
 	
 	
 	@Test(priority=1)
 	public void Add_Service_ND_Update() throws Exception
 	{
-		action_obj =new Repo_testing(driver);
+		extentTest = extent.startTest("Add_Service_ND_Update");
+		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
 
@@ -129,10 +147,10 @@ public class Customer_Update extends Login_site {
 				// Enter NMI
 				//action_obj.NMISelct().sendKeys("MA" + random+"2");
 			// Add NMI Number
-				 action_obj.NMISelct().sendKeys("NM14350986");
+				 action_obj.NMISelct().sendKeys("NM63345654");
 				Thread.sleep(2000);
 				// Add NMI CheeckSUm
-				action_obj.NMi_CheckSum().sendKeys("6");
+				action_obj.NMi_CheckSum().sendKeys("2");
 
 				Thread.sleep(10000);
 				// Add NMi Classification Code
@@ -148,7 +166,7 @@ public class Customer_Update extends Login_site {
 				
 				Select planno = new Select(action_obj.Service_plan());
 				//planno.selectByVisibleText("MktPlan_NetworkRate100");
-				planno.selectByIndex(2);
+				planno.selectByIndex(3);
 				Thread.sleep(3000);
 			
 				//planno.selectByVisibleText("MPlan_RetailRate994");
@@ -165,8 +183,8 @@ public class Customer_Update extends Login_site {
 				Thread.sleep(3000);
 				// action_obj.Purposcurrentdate().click();
 
-				/*Select transferread = new Select(action_obj.Transfer_Read_Type());
-				transferread.selectByValue("SP");*/
+				Select transferread = new Select(action_obj.Transfer_Read_Type());
+				transferread.selectByValue("SP");
 				//WebElement transferread1 = action_obj.Transfer_Read_Type();
 				//transferread1.sendKeys("Special Read");
 				///transferread1.click();
@@ -213,7 +231,7 @@ public class Customer_Update extends Login_site {
 				//serviceid = "NMI4975123";
 				//serviceid = driver.findElement(By.cssSelector("td.sorting_1")).getText();
 				//Assert.assertEquals(serviceid, "MA" + random+"2");
-				action_obj.SearchID1().sendKeys("NM14350986");
+				action_obj.SearchID1().sendKeys("NM63345654");
 				Assertion_obj.Assertion_serviceId1();
 				// Add NMI Number
 				//Assert.assertEquals(serviceid,"NMI4975123");
@@ -235,7 +253,7 @@ public class Customer_Update extends Login_site {
 
 				//action_obj.SearchID1().sendKeys("MA" + random+"2");
 				// Add NMI Number
-				action_obj.SearchID1().sendKeys("NM14350986");
+				action_obj.SearchID1().sendKeys("NM63345654");
 				Assertion_obj.Assertion_serviceId();
 
 		//Service Edit 
@@ -259,13 +277,14 @@ public class Customer_Update extends Login_site {
 		netconfigration.selectByValue("NET_IE");
 
 		Select Channelaggrigation=new Select(action_obj.SubChannelAggrigate1());
-		Channelaggrigation.selectByValue("SUM");
-
+		Channelaggrigation.selectByValue("SUM");*/
+		Thread.sleep(98756);
 	}
  @Test(priority=2)
 	public void Add_Siteparamenter() throws Exception
 	{
-		action_obj =new Repo_testing(driver);
+	 extentTest = extent.startTest("Add_Siteparamenter");
+		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
 		Thread.sleep(5000);
@@ -292,17 +311,19 @@ public class Customer_Update extends Login_site {
 		action_obj.Add_Buttono().click();
 		action_obj.SAavEBtn().click();
 		Thread.sleep(3000);
-
+*/
 
 		//action_obj.saveditserv().click();
 
 		//		action_obj.OKbtn().click();
+	 Thread.sleep(35521);
 
 	} 
  @Test(priority=3)
 	public void AddSite_plan_fromService() throws Exception
 	{
-		 Thread.sleep(48521);	
+	 extentTest = extent.startTest("AddSite_plan_fromService");
+		 Thread.sleep(58991);	
 		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
@@ -373,7 +394,8 @@ public class Customer_Update extends Login_site {
 	 @Test(priority=4)
 	public void Add_BillRun_Cycle() throws Exception
 	{   
-		action_obj =new Repo_testing(driver);
+		 extentTest = extent.startTest("Add_BillRun_Cycle");
+		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
 		Thread.sleep(1000);
@@ -395,13 +417,13 @@ public class Customer_Update extends Login_site {
 		executor.executeScript("window,scrollBy(0,1800)", "");
 
 
-	/*	action_obj.cycleDropDown1().click();
+		action_obj.cycleDropDown1().click();
 		driver.findElement(By.xpath(".//*[contains(span,'"+Customer+"')]")).click();
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ESCAPE).build().perform();
 		action_obj.SaveCycleq().click();
 
-		Assertion_obj.Assertion_SaveCycless();*/
+		Assertion_obj.Assertion_SaveCycless();
 		//This is template of Assertion Assertion_obj.validateclickEditbtn();
 
 		//Search for customer
@@ -429,13 +451,16 @@ public class Customer_Update extends Login_site {
 		Thread.sleep(2000);
 		executor.executeScript("window,scrollBy(0,-1800)", "");
 
-		Assertion_obj.Assertion_SaveCycless();
+		Assertion_obj.Assertion_SaveCycless();*/
+		 Thread.sleep(66890);
 
 	}
 	@Test(priority=5)
 	public void Edit_BillRUn() throws Exception 
 	{
-		action_obj =new Repo_testing(driver);
+		
+		extentTest = extent.startTest("Edit_BillRUn");
+		/*action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
 		Thread.sleep(1000);
@@ -460,8 +485,8 @@ public class Customer_Update extends Login_site {
 		CycleName.sendKeys("Edit"+Customer);
 
 		action_obj.SaveCycleq().click(); 
-
-
+*/
+		Thread.sleep(42990);
 
 	}
  

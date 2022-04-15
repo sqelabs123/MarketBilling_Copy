@@ -27,12 +27,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="G:/Market_Billing/TestData/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry exported="true" kind="src" path="/Customer_Portal_Utility"/>
+	<classpathentry kind="lib" path="D:/A_Projects/selenium-server-standalone-3.141.5(1).jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/M_Utility_Copy"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

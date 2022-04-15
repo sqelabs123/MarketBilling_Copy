@@ -1,7 +1,6 @@
 package Marketing_Project;
 
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
@@ -21,14 +20,16 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
-import bsh.ParseException;
 
-public class Enable_Auto_Due_Date extends Login_site {
+public class Enable_Auto_Due_Date extends ExtentReport {
 
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
@@ -45,10 +46,21 @@ public class Enable_Auto_Due_Date extends Login_site {
 	public int random2 = (new Random()).nextInt(900) + 100;
 	Random rand2;
 	
-
+	BrowserList bl = new BrowserList();
 
 	@Test(priority=0)
-	public void Enable_Due_Date_By_Payment_Terms() throws Exception{
+	@Parameters({"userId","password","url"})
+	public void Enable_Due_Date_By_Payment_Terms(String userId,String password,String url) throws Exception{
+extentTest = extent.startTest("createAdminAcc");
+
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		Login_site.Login(userId, password, url);
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -69,6 +81,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 
 		//Commercial checkbox
 		action_obj.Commercial_Checkbox().click();
+		Thread.sleep(2000);
 
 		//Residential checkbox
 		action_obj.Residential_Checkbox().click();
@@ -102,7 +115,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 
 	@Test(priority=1)
 	public void Add_Commercial_customer() throws Exception{
-
+		extentTest = extent.startTest("Add_Commercial_customer");
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -138,7 +151,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		// adding scripts for Version 7.0.37...............
 		// Add Phone (BH)
 		action_obj.PhoneBH().sendKeys("42" + random);
-		// Add Phone (AH)
+		// Add Phone (AH).
 		action_obj.PhoneAH().sendKeys("41" + random);
 
 		action_obj.Mobilenumber().sendKeys("43" + random);
@@ -179,7 +192,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//Enter payment term number of days
 
 
-		executor.executeScript("window,scrollBy(0,400)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Save Customer
 		Thread.sleep(5000);
 		action_obj.SaveCustomer().click();
@@ -248,8 +261,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		//Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(4000);
 
 		// planno.selectByVisibleText("MPlan_RetailRate994");
@@ -329,9 +342,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -382,6 +395,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Assertion_obj.Assertion_Meter_Register();
 
 		//Enter Register ID
+	
 		action_obj.Register_Id().sendKeys("1");
 
 		//Enter Network Tariff Code
@@ -403,9 +417,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType5 = new Select(action_obj.Consumption_Type());
-		consumptionType5.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType5 = new Select(action_obj.Consumption_Type());
+		//consumptionType5.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -481,7 +495,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//Click on Save button
 		action_obj.Save().click();
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 
 		//Click on Add Reads
 		action_obj.Add_Read().click();
@@ -530,6 +544,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 
 	@Test(priority=2)
 	public void Add_Residential_Customer() throws Exception{
+		extentTest = extent.startTest(" Add_Residential_Customer(");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -577,7 +592,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		action_obj.SelectToday().click();
 		action_obj.Contract_Term().sendKeys("10");
 		Thread.sleep(3000);
-		executor.executeScript("window,scrollBy(0,400)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Save Customer
 		Thread.sleep(15000);
 		action_obj.SaveCustomer().click();
@@ -631,8 +646,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//	NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		//Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(4000);
 
 		executor.executeScript("window,scrollBy(0,200)", "");
@@ -666,7 +681,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//executor.executeScript("window,scrollBy(0,-1500)", "");
 		success="Success! The Service has been created successfully.";
 		Assert.assertEquals(success,"Success! The Service has been created successfully.");  
-		Assertion_obj.Assertion_successmsgservice();
+		//Assertion_obj.Assertion_successmsgservice();
+		Thread.sleep(3000);
 
 		action_obj.ServicesTab().click();
 		Thread.sleep(3000);
@@ -692,9 +708,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -765,9 +781,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType8 = new Select(action_obj.Consumption_Type());
-		consumptionType8.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType8 = new Select(action_obj.Consumption_Type());
+		//consumptionType8.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -894,6 +910,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 
 	@Test(priority=3)
 	public void Add_Bussiness_Customer() throws Exception{
+		extentTest = extent.startTest("Add_Bussiness_Customer");
 
 
 		// Add Customer With Business type of Category under CUstomers
@@ -936,7 +953,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Select St = new Select(action_obj.Custmr_State());
 		St.selectByValue("NSW");
 		action_obj.CustomenrPIN().sendKeys("6541");           
-		executor.executeScript("window,scrollBy(0,2200)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Contact Details > Authentication
 		Thread.sleep(2000);
 		//
@@ -1015,8 +1032,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(3000);
 		// planno.selectByVisibleText("MPlan_RetailRate994");
 		//planno.selectByIndex(1);
@@ -1099,9 +1116,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -1172,9 +1189,9 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType6 = new Select(action_obj.Consumption_Type());
-		consumptionType6.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType6 = new Select(action_obj.Consumption_Type());
+		//consumptionType6.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -1302,6 +1319,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 	@Test(priority=4)
 	public void Add_BillRun_Cycle() throws Exception
 	{   
+		extentTest = extent.startTest("Add_BillRun_Cycle");
 		action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
@@ -1364,20 +1382,27 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Thread.sleep(3000);
 		//Click on Move Button
 		action_obj.MoveBtn().click();
-		Thread.sleep(3000);
-
+		Thread.sleep(4000);
+		
+		//////////////////////////////////////////new confirmation handle by ashima///////
+		
+		/////////////////////////////////////////////////////////////////////////ashima/////
 		executor.executeScript("window,scrollBy(0,1800)", "");
 		//Click on save Button
 		action_obj.SaveCycleq().click();
 		Thread.sleep(2000);
 		executor.executeScript("window,scrollBy(0,-1800)", "");
 
+
 		Assertion_obj.Assertion_SaveCycless();
-	}
+
+	
+		}
 
 
 	@Test(priority=5)
 	public void Calender_Days_Due_Date() throws Exception{
+		extentTest = extent.startTest("Calender_Days_Due_Date");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -1386,42 +1411,47 @@ public class Enable_Auto_Due_Date extends Login_site {
 
 		//Click on Bill Run tab
 		action_obj.Bill_Run().click();
-
+		
 		//Click on Run the Bills
 		action_obj.Run_The_Bills().click();
-		Thread.sleep(1000);
-
+	    Thread.sleep(1000);
+				
 		//Click on Start Date
-		action_obj.Start_Date().click();
-		Thread.sleep(1000);
+				action_obj.Start_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.First_Day().click();
+				Thread.sleep(1000);
 
-		//Click on End Date
-		action_obj.End_Date().click();
-		Thread.sleep(1000);
+				//Click on End Date
+				action_obj.End_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				action_obj.TodayDate().click();
+				//action_obj.Last_Day().click();
+				Thread.sleep(1000);
 
-		//Click on Issue Date
-		action_obj.Issue_Date().click();
-		Thread.sleep(1000);
+				//Click on Issue Date
+				action_obj.Issue_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.Last_Day().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.Due_Date().click();
-		//Thread.sleep(1000);
+				//Select Today Date
+				//action_obj.Due_Date().click();
+				//Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+			    //action_obj.TodayDate().click();
+				//action_obj.Last_Day().click();
+				//Thread.sleep(1000);
+
 
 		//Select Bill Run Cycle
 		Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
@@ -1474,12 +1504,14 @@ public class Enable_Auto_Due_Date extends Login_site {
 		//Close the popup
 		action_obj.Close_Icon().click();
 		Thread.sleep(1000);
+		
 
 	}
 	
 	
 	@Test(priority=6)
 	public void End_of_Month_Due_Date() throws Exception{
+		extentTest = extent.startTest("End_of_Month_Due_Date");
 
 
 		action_obj = new Repo_testing(driver);
@@ -1577,33 +1609,42 @@ public class Enable_Auto_Due_Date extends Login_site {
 	//	action_obj.Start_Date().click();
 	//	Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+	   //Click on Start Date
+			//action_obj.Start_Date().click();
+			//Thread.sleep(1000);
 
-		//Click on End Date
-		action_obj.End_Date().click();
-		Thread.sleep(1000);
+			//Select Date
+			//action_obj.TodayDate().click();
+			action_obj.First_Day().click();
+			Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+			//Click on End Date
+			action_obj.End_Date().click();
+			Thread.sleep(1000);
 
-		//Click on Issue Date
-		action_obj.Issue_Date().click();
-		Thread.sleep(1000);
+			//Select Date
+			action_obj.TodayDate().click();
+			//action_obj.Last_Day().click();
+			Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+			//Click on Issue Date
+			action_obj.Issue_Date().click();
+			Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.Due_Date().click();
-		//Thread.sleep(1000);
+			//Select Date
+			action_obj.TodayDate().click();
+			//action_obj.Last_Day().click();
+			Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+			//Select Today Date
+			//action_obj.Due_Date().click();
+			//Thread.sleep(1000);
+
+			//Select Date
+		    //action_obj.TodayDate().click();
+			//action_obj.Last_Day().click();
+			//Thread.sleep(1000);
+
 
 		//Select Bill Run Cycle
 		Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
@@ -1678,6 +1719,7 @@ public class Enable_Auto_Due_Date extends Login_site {
 	
 	@Test(priority=7)
 	public void Business_Days_Due_Date() throws Exception{
+		extentTest = extent.startTest("Business_Days_Due_Date");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -1754,42 +1796,47 @@ public class Enable_Auto_Due_Date extends Login_site {
 		Thread.sleep(1000);
 
 		//Click on Start Date
-		action_obj.Start_Date().click();
-		Thread.sleep(1000);
+				action_obj.Start_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.First_Day().click();
+				Thread.sleep(1000);
 
-		//Click on End Date
-		action_obj.End_Date().click();
-		Thread.sleep(1000);
+				//Click on End Date
+				action_obj.End_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				action_obj.TodayDate().click();
+				//action_obj.Last_Day().click();
+				Thread.sleep(1000);
 
-		//Click on Issue Date
-		action_obj.Issue_Date().click();
-		Thread.sleep(1000);
+				//Click on Issue Date
+				action_obj.Issue_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.Last_Day().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.Due_Date().click();
-		//Thread.sleep(1000);
+				//Select Today Date
+				//action_obj.Due_Date().click();
+				//Thread.sleep(1000);
 
-		//Select Today Date
-		//action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+			    //action_obj.TodayDate().click();
+				//action_obj.Last_Day().click();
+				//Thread.sleep(1000);
+
 
 		//Select Bill Run Cycle
 		Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
 		billruncycle.selectByVisibleText("DueDate"+ random2);
 		//billruncycle.selectByVisibleText("newa");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 
 		//Click on Run Bill button
@@ -1945,8 +1992,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 	            ++workDays;
 	        }
 	        }
-	    /*If start date is coming after end date, Then shuffling Dates and storing dates 
-	by incrementing upto end date in do-while part.*/
+	  //  If start date is coming after end date, Then shuffling Dates and storing dates 
+	//by incrementing upto end date in do-while part.
 	    if (c1.getTimeInMillis() > c2.getTimeInMillis()) {
 	            c1.setTime(d3);
 	            c2.setTime(d2);
@@ -1966,6 +2013,8 @@ public class Enable_Auto_Due_Date extends Login_site {
 	   	long expresult2= workDays - count;
 		long actresult1= 15;
 		Assert.assertEquals(actresult1,expresult2);
+		
+		
 	}
 	
 	

@@ -209,8 +209,7 @@ public class Assertion_Test {
 				public static  String Ex_Checkstatus;
 				public static  String Act_Checkstatus;
 				public  void Assertion_Statuscheck()  throws Exception 
-				{ 
-					
+				{ 					
 					//System.out.println(Ex_home=td.get_string_CellData("Assertion", 0, 0));
 					Act_Checkstatus=Robj.Assert_Stauts().getText();
 					Ex_Checkstatus="Active";
@@ -478,16 +477,51 @@ public class Assertion_Test {
 				{ 
 					
 					//System.out.println(Ex_home=td.get_string_CellData("Assertion", 0, 0));
-					Act_ResultPopup=Robj.Assert_Success_Message().getText();
-					Ex_ResultPopup="Success!";
+					Act_AssertSuccessMessage=Robj.Assert_Success_Message().getText();
+					Ex_AssertSuccessMessage="Success!";
 					Assert.assertEquals(Act_AssertSuccessMessage,Ex_AssertSuccessMessage);
 					System.out.println("	# Validation == PASS :: Success message is displayed ");
 					
 				}
 				
 				
+				//AssertSuccessMessage
+				public static  String Ex_AssertInfoMessage;
+				public static  String Act_AssertInfoMessage;
+				public  void Assertion_Success_Info_Message()  throws Exception 
+				{ 
+					
+					//System.out.println(Ex_home=td.get_string_CellData("Assertion", 0, 0));
+					Act_AssertInfoMessage=Robj.Success_Info_Message().getText();
+					Ex_AssertInfoMessage="Issue date and Due date has been updated.";
+					Assert.assertEquals(Act_AssertInfoMessage,Ex_AssertInfoMessage);
+					System.out.println("	# Validation == PASS :: Success message is displayed ");
+					
+				}
 				
+				//AssertSuccessMessage
+				public static  String Ex_SuccessMessage;
+				public static  String Act_SuccessMessage;
+				public  void Assertion_Success_Messages()  throws Exception 
+				{ 
+					Act_SuccessMessage=Robj.Success_Message().getText();
+					Ex_SuccessMessage=" Successfully saved message. ";
+					Assert.assertEquals(Ex_SuccessMessage,Ex_SuccessMessage);
+					System.out.println("	# Validation == PASS :: Success message is displayed ");
+					
+				}
 				
+				//AssertSuccessMessage
+				public static  String Ex_SendEmailResultsPopup;
+				public static  String Act_SendEmailResultsPopup;
+				public  void Assertion_Send_Email_Results_Popup()  throws Exception 
+				{ 
+					Act_SendEmailResultsPopup=Robj.Email_Results_Popup().getText();
+					Ex_SendEmailResultsPopup="Send Email Results";
+					Assert.assertEquals(Act_SendEmailResultsPopup,Ex_SendEmailResultsPopup);
+					System.out.println("	# Validation == PASS :: Success message is displayed ");
+					
+				}
 				
 				
 				

@@ -4,28 +4,26 @@
   
 	<parameter name="url"
 		value="https://markettest.utilibill.com.au/marketbilling/"></parameter>
-	<parameter name="userId" value="markettest777@yopmail.com"></parameter>
-	<parameter name="password" value="C123456789@c"></parameter>
+	<parameter name="userId" value="testreport+18@sqelabs.com"></parameter>
+	<parameter name="password" value="Test@12345"></parameter>
 
- 
-	<!--  <test thread-count="5" name="Import TOU File And Add Plans">
+
+   <test thread-count="5" name="Import TOU File And Add Plans">
 
 		<classes>
             
 			<class name="Marketing_Project.Market_TOU_FIle_and_AddPlan" />
-
 		</classes>
-	</test>
+	</test> 
 
-
- <test thread-count="5" name="Add All Type of Customers and its Services">
+   <test thread-count="5" name="Add All Type of Customers and its Services">
 
 		<classes>
 
 			<class name="Marketing_Project.Market_All_Cusotmer" />
 
 		</classes>
-	</test>
+	   </test> 
 
 	<test thread-count="5" name="All Customers Billrun With No_Cycle">
 
@@ -34,27 +32,28 @@
 			<class name="Marketing_Project.Billrun_With_No_Cycle" />
 
 		</classes>
-	</test> -->
+	</test>  
 
-<!-- 
-	<test thread-count="5" name="Single Customer Bill Run, Rollback and Rebill">
+
+    <test thread-count="5" name="Single Customer Bill Run, Rollback and Rebill">
 
 		<classes>
 
 			<class name="Marketing_Project.Single_Customer_Bill_Run" />
 
 		</classes>
-	</test>  
-	 	 <test thread-count="5" name="Two Customers Bill Run, Rollback and Rebill">
+	</test>      
+	
+     <test thread-count="5" name="Two Customers Bill Run, Rollback and Rebill">
 
 		<classes>
 
 			<class name="Marketing_Project.Two_Customers_Bill_Run" />
 
 		</classes>
-	</test>
+	</test> 
   
-	<test thread-count="5" name="More Than two Customers Bill Run, Rollback and Rebill">
+      <test thread-count="5" name="More Than two Customers Bill Run, Rollback and Rebill">
 
 		<classes>
 
@@ -63,15 +62,33 @@
 		</classes>
 	</test>  
 
-	 <test thread-count="5" name="Update Customer Service Details">
+	  <test thread-count="5" name="Update Customer Service Details">
 
 		<classes>
 
 			<class name="Marketing_Project.Customer_Update" />
 
 		</classes>
-	</test>    
+	</test>   
 
+     <test thread-count="5" name="Bill run using Import and Payment">
+
+		<classes>
+
+			<class name="Marketing_Project.Bill_Run_With_Import_And_Transactions" />
+
+		</classes>
+	</test> 
+	
+	   <test thread-count="5" name="Update Statement Dates, Download statement and Email Statement">
+
+		<classes>
+
+			<class name="Marketing_Project.Other_Scenarios" />
+
+		</classes>
+	</test>    
+ 	
    <test thread-count="5" name="Run Bill to Check Auto Due Date Feature for All Customer type">
 
 		<classes>
@@ -79,25 +96,10 @@
 			<class name="Marketing_Project.Enable_Auto_Due_Date" />
 
 		</classes>
-	</test>      -->
-	
- <!-- <test thread-count="5" name="Run Bill to Check Auto Due Date Feature for All Customer type">
-
-		<classes>
-
-			<class name="Marketing_Project.bussinesstest" />
-
-		</classes>
-	</test>  -->
-	
-  <test thread-count="5" name="billrun with import meter and meter register">
-
-		<classes>
-
-			<class name="Marketing_Project.billrun_with_Import_Meter_and_Meter_Register" />
-
-		</classes>
-	</test> 
+	</test>       
+ 
+ 	 
+  
 
 </suite> <!-- Suite -->
 

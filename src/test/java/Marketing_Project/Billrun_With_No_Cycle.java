@@ -1,22 +1,23 @@
 package Marketing_Project;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
 
-public class Billrun_With_No_Cycle extends Login_site {
+public class Billrun_With_No_Cycle extends ExtentReport {
 
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
@@ -28,11 +29,23 @@ public class Billrun_With_No_Cycle extends Login_site {
 	public int random = (new Random()).nextInt(900) + 100;
 	Random rand;
 
-
+	BrowserList bl = new BrowserList();
 
 
 	@Test(priority=0)
-	public void Add_Meter() throws Exception{
+	@Parameters({"userId","password","url"})
+	public void Add_Meter(String userId,String password,String url) throws Exception{
+extentTest = extent.startTest("Add_Meter");
+
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		Login_site.Login(userId, password, url);
+		
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -58,10 +71,10 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(5000);
 		//Click on Service Tab
 		action_obj.ServicesTab().click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//Click on Edit button
 		action_obj.Service_Edit().click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
 
@@ -77,23 +90,23 @@ public class Billrun_With_No_Cycle extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
 		configurationType.selectByValue("2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
 
 		//Select Last test date datepicker
 		action_obj.Last_Test_Date().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//Select today date
 		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Select Date Connected datepicker
 		action_obj.Date_Connected().click();
@@ -111,16 +124,19 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 		executor.executeScript("window,scrollBy(0,1800)", "");
 		Thread.sleep(1000);
+
 	}
 
 	@Test(priority=1)
 	public void Add_Meter_Register() throws Exception{
+		extentTest = extent.startTest("Add_Meter_Register");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+		Thread.sleep(2000);
+		
 		//Edit Meter
 		action_obj.Edit_Meter().click();
 
@@ -128,7 +144,7 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Assertion_obj.Assertion_Metering();
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		//Add Meter Register
 		action_obj.Meter_Register().click();
@@ -137,7 +153,7 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Assertion_obj.Assertion_Meter_Register();
 
 		//Enter Register ID
-		action_obj.Register_Id().sendKeys("1");
+		action_obj.Register_Id().sendKeys("10");
 
 		//Enter Network Tariff Code
 		action_obj.Network_Tariff_Code().sendKeys("NA");
@@ -158,9 +174,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -192,8 +208,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 
 	@Test(priority=2)
 	public void Add_Meter_Reads() throws Exception{
+		extentTest = extent.startTest("Add_Meter_Reads");
 
-		action_obj = new Repo_testing(driver);
+	/*	action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -287,8 +304,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		//Click on Save button
 		action_obj.Save().click();
 		Thread.sleep(1000);
-
 		executor.executeScript("window,scrollBy(0,-1800)", "");
+		*/
+		Thread.sleep(47989);
 
 	}
 
@@ -296,7 +314,8 @@ public class Billrun_With_No_Cycle extends Login_site {
 	@Test(priority=3)
 	public void Add_Metering_Commercial_Customer() throws Exception
 	{
-		action_obj = new Repo_testing(driver);
+		extentTest = extent.startTest("Add_Metering_Commercial_Customer");
+	/*	action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -334,9 +353,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -406,9 +425,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType2 = new Select(action_obj.Consumption_Type());
-		consumptionType2.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType2 = new Select(action_obj.Consumption_Type());
+		//consumptionType2.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -526,7 +545,8 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 
 		executor.executeScript("window,scrollBy(0,-1800)", "");
-
+*/
+		Thread.sleep(112933);
 
 	}
 
@@ -534,7 +554,8 @@ public class Billrun_With_No_Cycle extends Login_site {
 	@Test(priority=4)
 	public void Add_Metering_Business_Customer() throws Exception
 	{
-		action_obj = new Repo_testing(driver);
+		extentTest = extent.startTest("Add_Metering_Business_Customer");
+	/*	action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -572,9 +593,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -623,7 +644,8 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Assertion_obj.Assertion_Meter_Register();
 
 		//Enter Register ID
-		action_obj.Register_Id().sendKeys("1");
+	
+		action_obj.Register_Id().sendKeys("1");///////////////////////////////////////////////////////
 
 		//Enter Network Tariff Code
 		action_obj.Network_Tariff_Code().sendKeys("NA");
@@ -644,9 +666,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType2 = new Select(action_obj.Consumption_Type());
-		consumptionType2.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType2 = new Select(action_obj.Consumption_Type());
+		//consumptionType2.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -764,7 +786,8 @@ public class Billrun_With_No_Cycle extends Login_site {
 		Thread.sleep(1000);
 
 		executor.executeScript("window,scrollBy(0,-1800)", "");
-
+*/
+		Thread.sleep(96987);
 
 
 	}
@@ -774,8 +797,9 @@ public class Billrun_With_No_Cycle extends Login_site {
 
 	@Test(priority=5)
 	public void Bill_Run_Without_Selecting_Cycle() throws Exception{
+		extentTest = extent.startTest("Bill_Run_Without_Selecting_Cycle");
 
-		action_obj = new Repo_testing(driver);
+/*		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -791,33 +815,38 @@ public class Billrun_With_No_Cycle extends Login_site {
 		action_obj.Start_Date().click();
 		Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
+		//Select Date
+		//action_obj.TodayDate().click();
+		action_obj.First_Day().click();
 		Thread.sleep(1000);
 
 		//Click on End Date
 		action_obj.End_Date().click();
 		Thread.sleep(1000);
 
-		//Select Today Date
+		//Select Date
 		action_obj.TodayDate().click();
+		//action_obj.Last_Day().click();
 		Thread.sleep(1000);
 
 		//Click on Issue Date
 		action_obj.Issue_Date().click();
 		Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+		//Select Date
+		//action_obj.TodayDate().click();
+		action_obj.Last_Day().click();
+		Thread.sleep(3000);
 
 		//Select Today Date
 		action_obj.Due_Date().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		Thread.sleep(1000);
+		//Select Date
+	    //action_obj.TodayDate().click();
+		//action_obj.Last_Day().click();
+		action_obj.New_Day().click();
+		Thread.sleep(2000);
 
 		//Select Bill Run Cycle
 		//Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
@@ -828,23 +857,30 @@ public class Billrun_With_No_Cycle extends Login_site {
 
 		//Click on Run Bill button
 		action_obj.Run_Bill().click();
-		Thread.sleep(5000);
+		Thread.sleep(16000);
 		
 		//Assert Process All Customers popup
 	    Assertion_obj.Assertion_Process_All_Customers();
 	    Thread.sleep(1000);
+	    
+	    //Click on continue button
+	    action_obj.Continue_Button().click();
+	    Thread.sleep(11000);
 		
 		
 		//Assert completion of Bill Run
-		//Assertion_obj.Assert_Success_Bill_Run();
-		//Thread.sleep(1000);
+		Assertion_obj.Assert_Success_Bill_Run();
+		Thread.sleep(1000);
 
 		//Click on View Button
 		//action_obj.View_Bill_Run_Statement().click();
 		//Thread.sleep(1000);
+	*/
+		Thread.sleep(82678);
 
 	}
-
+	
+	
 	
 	/*@AfterTest
 	public void Teardown(){
@@ -854,9 +890,6 @@ public class Billrun_With_No_Cycle extends Login_site {
 	}
 
 	 */
-
-
-
 
 
 

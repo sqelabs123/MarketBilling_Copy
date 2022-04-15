@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="Marketing_Project.billrun_with_Import_Meter_and_Meter_Register">
+      <class name="Marketing_Project.Market_TOU_FIle_and_AddPlan">
         <methods>
-          <include name="Login"/>
-          <include name="Add_Customer_and_Service"/>
-          <include name="Import_Meter_Number"/>
+          <include name="Add_PlanWith_RetailRates"/>
+          <include name="tearDown"/>
+          <include name="endReport"/>
+          <include name="Other_plan"/>
+          <include name="setExtent"/>
+          <include name="Import_TOU_Definition"/>
+          <include name="Add_planWith_NetworkRats"/>
+          <include name="Add_Simple_Plan"/>
         </methods>
-      </class> <!-- Marketing_Project.billrun_with_Import_Meter_and_Meter_Register -->
+      </class> <!-- Marketing_Project.Market_TOU_FIle_and_AddPlan -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

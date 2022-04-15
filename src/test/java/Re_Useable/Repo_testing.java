@@ -121,6 +121,44 @@ public class Repo_testing
 		}
 		return null;
 	}
+	
+//	select Group
+	public WebElement Select_newGroup() 
+	{
+		try {
+			WebDriverWait wait= new WebDriverWait(driver,60);
+			System.out.println("select group dropdown should be displayed");
+			WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("selectGroup")));
+			return ele;	
+		} catch (Exception e) {
+			Reporter.log("select group dropdown not displayed-----"+e.getLocalizedMessage());
+			System.out.println("select group dropdown not displayed-----");
+		}
+		return null;
+	}
+	
+//	Login button	
+	public WebElement Login_button() 
+	{
+		try {
+			WebDriverWait wait= new WebDriverWait(driver,60);
+			System.out.println("Login button should be displayed");
+			WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("loginButton")));
+			return ele;	
+		} catch (Exception e) {
+			Reporter.log("Login button not displayed----"+e.getLocalizedMessage());
+			System.out.println("Login button not displayed-----");
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	//click on 'Customers' tab
 	public WebElement Customertab1() 
@@ -3401,6 +3439,21 @@ public class Repo_testing
 					}
 					return null;	
 				}	
+				
+				//NewDay
+				public WebElement New_Day() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("New Day should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("newDay")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("New Day not displayed-----"+e.getLocalizedMessage());
+						System.out.println("New Day not displayed-----");
+					}
+					return null;	
+				}	
 
 				//endDate
 				public WebElement End_DateB() 
@@ -3616,6 +3669,23 @@ public class Repo_testing
 						WebDriverWait wait= new WebDriverWait(driver,60);
 						System.out.println("Close icon 2 should be displayed");
 						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("closeIcon2")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Close icon 2 not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Close icon 2 not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+
+				//CloseIconB
+				public WebElement Close_IconB() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Close icon 2 should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("closeIconB")));
 						return ele;	
 					} catch (Exception e) {
 						Reporter.log("Close icon 2 not displayed-----"+e.getLocalizedMessage());
@@ -4179,6 +4249,143 @@ public class Repo_testing
 					return null;	
 				}
 				
+				//Templates
+				public WebElement Templates() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Templates tab should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("templates")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Templates tab not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Templates tab not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Message Type
+				public WebElement Message_Type() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Message type dropdown should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("messageType")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Message type dropdown not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Message type dropdown not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Email From
+				public WebElement Email_From() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Email from field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailFrom")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Email from field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Email from field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Email Bcc
+				public WebElement Email_Bcc() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Email Bcc field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailBcc")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Email Bcc field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Email from field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Email Subject
+				public WebElement Email_Subject() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Email Subject field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailSubject")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Email Subject field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Email Subject field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Email Messgae
+				public WebElement Email_Messgae() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Email Message field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailMessgae")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Email Message field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Email Message field not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Save Button
+				public WebElement Save_button() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Save Button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("savebutton")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Save Button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Save Button not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Save Button
+				public WebElement Success_Message() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Success Message should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("successMessage")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Success Messsage not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Success Message not displayed-----");
+					} 
+					return null;	
+				}
+				
+				//Save Button
+				public WebElement Email_Results_Popup() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Send Email Results popup should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailResultPopup")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Send Email Results popup not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Send Email Results popup not displayed-----");
+					} 
+					return null;	
+				}
+				
+				
+				
 				//Update Statement Dates
 				public WebElement Update_Statement_Dates() 
 				{
@@ -4253,35 +4460,300 @@ public class Repo_testing
 						return ele;	
 					} catch (Exception e) {
 						Reporter.log("Update Button not displayed-----"+e.getLocalizedMessage());
-						System.out.println("Update Button field not displayed-----");
+						System.out.println("Update Button  not displayed-----");
 					} 
 					return null;	
 				}
 				
+
+				//Success Info Message
+				public WebElement Success_Info_Message() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Success Message should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("successInfoMessage")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Success Message not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Success Message not displayed-----");
+					} 
+					return null;	
+				}
 				
+				//Download_Pdf_Icon
+				public WebElement Download_Pdf_Icon() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Download PDF Icon should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("downloadPdfIcon")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Download PDF Icon not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Download PDF Icon  not displayed-----");
+					} 
+					return null;	
+				}
 				
+				//Selected_Customers_D
+				public WebElement Selected_Customers_D() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Selected Customers Download option should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("selectedCustomersD")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Selected Customers Download option not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Selected Customers Download option not displayed-----");
+					} 
+					return null;
+				}
+				
+				//Download Button
+				public WebElement Download_Button() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Selected Customers Download option should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("downloadButton")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Selected Customers Download option not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Selected Customers Download option not displayed-----");
+					} 
+					return null;
+				}
 			
 
+				//Email_Bills_Icon
+				public WebElement Email_Bills_Icon() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Email Bills icon should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("emailBillsIcon")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Email Bills icon not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Email Bills icon not displayed-----");
+					} 
+					return null;
+				}
 				
 				
 				
+				//All_Customer_Email
+				public WebElement All_Customer_Email() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Selected Customers Download option should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("allCustEmail")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Selected Customers Download option not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Selected Customers Download option not displayed-----");
+					} 
+					return null;
+				}
 				
+
+				//Continue Email
+				public WebElement Continue_Email() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Continue Email button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("continueEmail")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Continue Email button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Continue Email button not displayed-----");
+					} 
+					return null;
+				}
 				
+
+				//Send Email Results Popup
+				public WebElement Send_Email_Results() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Send Email Results Popup should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("sendEmailResults")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Send Email Results Popup not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Send Email Results Popup not displayed-----");
+					} 
+					return null;
+				}
 				
+				//FirstDay
+				public WebElement First_Day() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Select first day from datepicker should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("firstDay")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Select first day from datepicker not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Select first day from datepicker not displayed-----");
+					} 
+					return null;
+				}
 				
+				//ContinueButton
+				public WebElement Continue_Button() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Continue button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("continueButton")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Continue button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Continue button not displayed-----");
+					} 
+					return null;
+				}
 				
+				//TransactionTab
+				public WebElement Transaction_Button() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Transaction button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("transactionsTab")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Transaction button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Transaction button not displayed-----");
+					} 
+					return null;
+				}
 				
+				//TransactionType
+				public WebElement Transaction_Type() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Transaction type dropdown field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("transactionType")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Transaction type dropdown field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Transaction type dropdown field not displayed-----");
+					} 
+					return null;
+				}
 				
+				//PaymentMethod
+				public WebElement Payment_Method() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Payment method dropdown field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("paymentMethod")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Payment method dropdown field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Payment method dropdown field not displayed-----");
+					} 
+					return null;
+				}
 				
+				//PaymentAmount
+				public WebElement Payment_Amount() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Amount field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("amount")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Amount field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Amount field not displayed-----");
+					} 
+					return null;
+				}
 				
+				//Transaction Date
+				public WebElement Transaction_Date() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Transaction date field should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("transactionDate")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Transaction date field not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Transaction date field  not displayed-----");
+					} 
+					return null;
+				}
 				
+				//Make Payment
+				public WebElement Make_Payment() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Make Payment button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("makePayment")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Make Payment button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Make Payment button not displayed-----");
+					} 
+					return null;
+				}
 				
+				//Pay Method
+				public WebElement Pay_Method() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Payment method should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("paymethod")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Payment method not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Payment method not displayed-----");
+					} 
+					return null;
+				}
 				
+				//Make New Payment
+				public WebElement Make_New_Payment() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Make New Payment button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("makeNewPayment")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Make New Payment button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("Make New Payment button not displayed-----");
+					} 
+					return null;
+				}
 				
-				
-				
-				
-				
+				public WebElement Click_on_COK() 
+				{
+					try { 
+						WebDriverWait wait= new WebDriverWait(driver,60);
+						System.out.println("Make New Payment button should be displayed");
+						WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(objMap.getLocator("clickOnCOK")));
+						return ele;	
+					} catch (Exception e) {
+						Reporter.log("Make New Payment button not displayed-----"+e.getLocalizedMessage());
+						System.out.println("confirmation clicked-----");
+					} 
+					return null;
+				}
 				
 				
 }

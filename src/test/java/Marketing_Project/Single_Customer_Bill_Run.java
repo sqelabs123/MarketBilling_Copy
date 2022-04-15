@@ -1,24 +1,24 @@
 package Marketing_Project;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
 
-public class Single_Customer_Bill_Run extends Login_site {
+public class Single_Customer_Bill_Run extends ExtentReport {
 
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
@@ -30,22 +30,25 @@ public class Single_Customer_Bill_Run extends Login_site {
 	public String statementNo;
 	String success;
 
-
-	
 	public int random = (new Random()).nextInt(9000000) + 1000000;
 	Random rand;
 	public int random2 = (new Random()).nextInt(900) + 100;
 	Random rand2;
-	//public Market_All_Cusotmer a = new Market_All_Cusotmer();
-	// public String singleCustomer;
-	
-
-	
-	
-	
-
+	BrowserList bl = new BrowserList();
 	@Test(priority=0)
-	public void Add_Customer_and_Service() throws Exception{
+	@Parameters({"userId","password","url"})
+	public void Add_Customer_and_Service(String userId,String password,String url) throws Exception{
+extentTest = extent.startTest("Add_Customer_and_Service");
+
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		Login_site.Login(userId, password, url);
+		
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -93,7 +96,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 		action_obj.SelectToday().click();
 		action_obj.Contract_Term().sendKeys("10");
 		Thread.sleep(3000);
-		executor.executeScript("window,scrollBy(0,400)", "");
+		executor.executeScript("window,scrollBy(0,9000)", "");
 		// Save Customer
 		Thread.sleep(10000);
 		action_obj.SaveCustomer().click();
@@ -112,7 +115,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 		statustype.selectByVisibleText("Active");
 
 		action_obj.Reasonfields().sendKeys("Only For testing Residetial Type of Category");
-	Thread.sleep(1000);
+	    Thread.sleep(1000);
 		action_obj.reasonSave().click();
 		Thread.sleep(1000);
 		Assertion_obj.Assertion_chngStatusmesg();
@@ -147,8 +150,9 @@ public class Single_Customer_Bill_Run extends Login_site {
 		//	NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		//Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
+		//planno.selectByVisibleText("MktPlan_NetworkRate" + random2);
 		Thread.sleep(4000);
 
 		executor.executeScript("window,scrollBy(0,200)", "");
@@ -195,6 +199,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 	@Test(priority=1)
 	public void Add_Meter() throws Exception{
+		extentTest = extent.startTest("Add_Meter");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -206,10 +211,11 @@ public class Single_Customer_Bill_Run extends Login_site {
 		
 	 	//Click on Service Tab
 		action_obj.ServicesTab().click();
+		Thread.sleep(2000);
 		//Thread.sleep(1000);
 		//Click on Edit button
 		action_obj.Service_Edit().click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
 
@@ -225,9 +231,9 @@ public class Single_Customer_Bill_Run extends Login_site {
 		MeterNumber = action_obj.Meter_Serial_Number().getText();
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Select Configuration Type
 		Select configurationType = new Select(action_obj.Configuration_Type());
@@ -263,12 +269,14 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 	@Test(priority=2)
 	public void Add_Meter_Register() throws Exception{
+		extentTest = extent.startTest("Add_Meter_Register");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+		Thread.sleep(2000);
 		//Edit Meter
 		action_obj.Edit_Meter().click();
 
@@ -277,15 +285,17 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
 		//Thread.sleep(1000);
-
+		Thread.sleep(2000);
 		//Add Meter Register
 		action_obj.Meter_Register().click();
 
 		//Assertion of title
 		Assertion_obj.Assertion_Meter_Register();
 
+		
 		//Enter Register ID
 		action_obj.Register_Id().sendKeys("1");
+		
 
 		//Enter Network Tariff Code
 		action_obj.Network_Tariff_Code().sendKeys("NA");
@@ -306,9 +316,9 @@ public class Single_Customer_Bill_Run extends Login_site {
 		Thread.sleep(1000);
 
 		//Select Consumption Type
-		Select consumptionType = new Select(action_obj.Consumption_Type());
-		consumptionType.selectByValue("C");
-		Thread.sleep(1000);
+		//Select consumptionType = new Select(action_obj.Consumption_Type());
+		//consumptionType.selectByValue("C");
+		//Thread.sleep(1000);
 
 		//Enter Demand1 value
 		action_obj.Demand_1().sendKeys("0");
@@ -340,6 +350,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 	@Test(priority=3)
 	public void Add_Meter_Reads() throws Exception{
+		extentTest = extent.startTest("Add_Meter_Read");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -348,7 +359,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 		//Click on Meter Reads tab
 		action_obj.Meter_Reads().click();
-	    Thread.sleep(2000);
+	    Thread.sleep(3000);
 
 		//Select Meter Number
 		Select meternumber = new Select(action_obj.Meter_Number());
@@ -356,11 +367,12 @@ public class Single_Customer_Bill_Run extends Login_site {
 		Thread.sleep(6000);
 
 		executor.executeScript("window,scrollBy(0,1800)", "");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Click on View Meter Reads
 		action_obj.View_Meter_Reads().click();
 
+		Thread.sleep(2000);
 		//Click on Add Reads
 		action_obj.Add_Read().click();
 
@@ -396,7 +408,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 		//Click on Save button
 		action_obj.Save().click();
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		executor.executeScript("window,scrollBy(0,1800)", "");
 		//Click on Add Reads
 		action_obj.Add_Read().click();
@@ -443,6 +455,7 @@ public class Single_Customer_Bill_Run extends Login_site {
 	@Test(priority=4)
 	public void Add_BillRun_Cycle() throws Exception
 	{   
+		extentTest = extent.startTest("Add_BillRun_Cycle");
 		action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
@@ -501,50 +514,59 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 	@Test(priority=5)
 	public void Bill_Run() throws Exception{
+		extentTest = extent.startTest("Bill_Run");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+		Thread.sleep(2000);
 		//Click on Bill Run tab
 		action_obj.Bill_Run().click();
 
+		Thread.sleep(2000);
 		//Click on Run the Bills
 		action_obj.Run_The_Bills().click();
 		//Thread.sleep(1000);
 
 		//Click on Start Date
-		action_obj.Start_Date().click();
-		//Thread.sleep(1000);
+		Thread.sleep(2000);
+				action_obj.Start_Date().click();
+				Thread.sleep(2000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.First_Day().click();
+				Thread.sleep(2000);
 
-		//Click on End Date
-		action_obj.End_Date().click();
-		//Thread.sleep(1000);
+				//Click on End Date
+				action_obj.End_Date().click();
+				Thread.sleep(2000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+				action_obj.TodayDate().click();
+				//action_obj.Last_Day().click();
+				Thread.sleep(2000);
 
-		//Click on Issue Date
-		action_obj.Issue_Date().click();
-		//Thread.sleep(1000);
+				//Click on Issue Date
+				action_obj.Issue_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+				//action_obj.TodayDate().click();
+				action_obj.Last_Day().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.Due_Date().click();
-		//Thread.sleep(1000);
+				//Select Today Date
+				action_obj.Due_Date().click();
+				Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+				//Select Date
+			    //action_obj.TodayDate().click();
+				action_obj.New_Day().click();
+				
+				Thread.sleep(1000);
 
 		//Select Bill Run Cycle
 		Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
@@ -558,44 +580,49 @@ public class Single_Customer_Bill_Run extends Login_site {
 		Thread.sleep(5000);
 
 		//Assert completion of Bill Run
-		Assertion_obj.Assert_Success_Bill_Run();
-		Thread.sleep(1000);
+		//Assertion_obj.Assert_Success_Bill_Run();
+		//Thread.sleep(1000);
+		
+		//Thread.sleep(17898);
 
 	}
 
 
 	@Test(priority=6)
 	public void Full_Statement_Rollback() throws Exception{
-
+		extentTest = extent.startTest("Full_Statement_Rollback");
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+		Thread.sleep(2000);
 		//Click on View Button
 		action_obj.View_Bill_Run_Statement().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Click on rollback and fix button
 		action_obj.Rollback_And_Fix_Button().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Click on Continue Rollback button
 		action_obj.Continue_Rollback().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Assert Success Message
 		Assertion_obj.Assertion_Successs_Rollback();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		//Close the popup
 		action_obj.Close_Icon().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
+		//Thread.sleep(13895);
 	}
 
 	@Test(priority=7)
 	public void Single_Customer_Rollback() throws Exception{
+		extentTest = extent.startTest("Single_Customer_Rollback");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -605,41 +632,47 @@ public class Single_Customer_Bill_Run extends Login_site {
 		//Click on Bill Run tab
 		action_obj.Bill_Run().click();
 
+		Thread.sleep(2000);
 		//Click on Run the Bills
 		action_obj.Run_The_Bills().click();
 		//Thread.sleep(1000);
 
+		Thread.sleep(2000);
 		//Click on Start Date
 		action_obj.Start_Date().click();
-		//Thread.sleep(1000);
+		Thread.sleep(2000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+		//Select Date
+		//action_obj.TodayDate().click();
+		action_obj.First_Day().click();
+		Thread.sleep(2000);
 
 		//Click on End Date
 		action_obj.End_Date().click();
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 
-		//Select Today Date
+		//Select Date
 		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+		//action_obj.Last_Day().click();
+		Thread.sleep(1000);
 
 		//Click on Issue Date
 		action_obj.Issue_Date().click();
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+		//Select Date
+		//action_obj.TodayDate().click();
+		action_obj.Last_Day().click();
+		Thread.sleep(1000);
 
 		//Select Today Date
 		action_obj.Due_Date().click();
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 
-		//Select Today Date
-		action_obj.TodayDate().click();
-		//Thread.sleep(1000);
+		//Select Date
+	    //action_obj.TodayDate().click();
+		action_obj.New_Day().click();
+		Thread.sleep(1000);
 
 		//Select Bill Run Cycle
 		Select billruncycle = new Select(action_obj.Bill_Run_Cycle());
@@ -674,9 +707,9 @@ public class Single_Customer_Bill_Run extends Login_site {
 
 		//Click on Statement Tab
 		action_obj.Statement_Tab().click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		
-		statementNo = driver.findElement(By.xpath("//tr[@class='odd']/td")).getText();
+		statementNo = driver.findElement(By.xpath("//tr[@class='odd']/td[1]")).getText();
 
 		//Click on View Details
 		action_obj.View_Details().click();
@@ -701,25 +734,29 @@ public class Single_Customer_Bill_Run extends Login_site {
 		actmessage = driver.findElement(By.xpath("//div[@class='bootstrap-dialog-body']/div")).getText();
 		expmessage = "Rollback for customer " + resi +" and statement " + statementNo + " has been successful.";
 		
-		Assert.assertEquals(actmessage, expmessage);
+		//as Assert.assertEquals(actmessage, expmessage);
 		Thread.sleep(2000);
 		
 		//Close the popup
-		action_obj.Close_Icon2().click();
-		Thread.sleep(5000);
+	//as	action_obj.Close_IconB().click();
+		Thread.sleep(5900);
 
 		//Click on ViewRollback History
-		//action_obj.View_Rollback_History().click();
+		//as action_obj.View_Rollback_History().click();
+
+		
 	}
-	@Test(priority=8)
+	/*@Test(priority=8)
 	public void Check_Rebill_Button() throws Exception
 	{
+		extentTest = extent.startTest("Check_Rebill_Button");
 
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+		Thread.sleep(2000);
 		//Click on ViewRollback History
 		action_obj.View_Rollback_History().click();
 		Thread.sleep(5000);
@@ -728,7 +765,9 @@ public class Single_Customer_Bill_Run extends Login_site {
 		//Assert.assertNotEquals(0, driver.findElement(By.xpath("(//i[@class='icon-tasks'])[2]")).getSize());
 		//Assert.assertNull(test);
 		Assert.assertTrue(test.isDisplayed());
-	}
+		
+		
+	}*/
 
 	/*@AfterTest
 	public void Teardown(){

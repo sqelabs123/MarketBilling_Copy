@@ -1,25 +1,22 @@
 package Marketing_Project;
 
-import static org.testng.Assert.assertEquals;
-
-import java.io.IOException;
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Browsers.BrowserList;
+import ExtentReports.ExtentReport;
 import Re_Useable.Assertion_Test;
 import Re_Useable.Login_site;
 import Re_Useable.Repo_testing;
 
-public class Market_All_Cusotmer extends Login_site {
+public class Market_All_Cusotmer extends ExtentReport {
 	JavascriptExecutor executor;
 	Repo_testing action_obj;
 	Assertion_Test Assertion_obj;
@@ -35,11 +32,21 @@ public class Market_All_Cusotmer extends Login_site {
 	Random rand;
 
 	//public Market_All_Cusotmer b= new Market_All_Cusotmer();
-
+	BrowserList bl = new BrowserList();
 	@Test(priority = 0)
-	public void Customer_Type_Residential() throws Exception {
-		// add Customer with Residental Category
+	@Parameters({"userId","password","url"})
+	public void Customer_Type_Residential(String userId,String password,String url) throws Exception {
+extentTest = extent.startTest("Customer_Type_Residential");
 
+		
+		bl.initialize();
+		Thread.sleep(3000);
+		
+		 bl.urlStack();	
+			driver.manage().window().maximize();   
+			Thread.sleep(3000);
+		// add Customer with Residental Category
+			Login_site.Login(userId, password, url);
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -51,6 +58,7 @@ public class Market_All_Cusotmer extends Login_site {
 		// Select Customer type
 		Select custoemrType = new Select(action_obj.Customertype());
 		custoemrType.selectByVisibleText("Tenant");
+	
 		// Select category
 		Select category1 = new Select(action_obj.categoryopt());
 		category1.selectByVisibleText("Residential");
@@ -86,7 +94,7 @@ public class Market_All_Cusotmer extends Login_site {
 		action_obj.SelectToday().click();
 		action_obj.Contract_Term().sendKeys("10");
 		Thread.sleep(3000);
-		executor.executeScript("window,scrollBy(0,400)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Save Customer
 		Thread.sleep(15000);
 		action_obj.SaveCustomer().click();
@@ -123,6 +131,7 @@ public class Market_All_Cusotmer extends Login_site {
 
 	@Test(priority = 1)
 	public void Customer_Type_Business() throws Exception {
+		extentTest = extent.startTest("Customer_Type_Business");
 		// Add Customer With Business type of Category under CUstomers
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
@@ -162,13 +171,13 @@ public class Market_All_Cusotmer extends Login_site {
 		Select St = new Select(action_obj.Custmr_State());
 		St.selectByValue("TAS");
 		action_obj.CustomenrPIN().sendKeys("6541");           
-		executor.executeScript("window,scrollBy(0,2200)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Contact Details > Authentication
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		//
 
 		//add Contrat Statrt Date action_obj.COntractStartDate().click();
-		Thread.sleep(2000); 
+		//Thread.sleep(2000); 
 		//action_obj.SelectToday().click();
 		//  action_obj.Contract_Term().sendKeys("10"); Thread.sleep(3000);
 
@@ -209,6 +218,7 @@ public class Market_All_Cusotmer extends Login_site {
 
 	@Test(priority = 2)
 	public void Customer_Type_Commercial() throws Exception {
+		extentTest = extent.startTest("Customer_Type_Commercial");
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -274,7 +284,7 @@ public class Market_All_Cusotmer extends Login_site {
 		Thread.sleep(1000);
 		action_obj.Contract_TEam().sendKeys("10");
 
-		executor.executeScript("window,scrollBy(0,400)", "");
+		executor.executeScript("window,scrollBy(0,4000)", "");
 		// Save Customer
 		Thread.sleep(5000);
 		action_obj.SaveCustomer().click();
@@ -313,6 +323,7 @@ public class Market_All_Cusotmer extends Login_site {
 
 	@Test(priority = 3)
 	public void Add_Provisional_Service() throws Exception {
+		extentTest = extent.startTest("Provisional_Service");
 		action_obj = new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);
 		executor = (JavascriptExecutor) driver;
@@ -359,8 +370,8 @@ public class Market_All_Cusotmer extends Login_site {
 		Thread.sleep(5000);
 
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(5000);
 
 		//planno.selectByVisibleText("MPlan_RetailRate994");
@@ -413,7 +424,7 @@ public class Market_All_Cusotmer extends Login_site {
 		// successfully.");
 
 		action_obj.ServicesTab().click();
-
+		Thread.sleep(2000);
 		//action_obj.SearchID1().sendKeys("MA" + random+"2"); 
 		// Add NMI Number
 		//action_obj.SearchID1().sendKeys("NMI4975768");
@@ -430,12 +441,13 @@ public class Market_All_Cusotmer extends Login_site {
 		Thread.sleep(3000);
 		// Service Edit
 		action_obj.Service_Edit().click();
-		Assertion_obj.Assertion_pageEditService();
+		
+		//Assertion_obj.Assertion_pageEditService();   ///////////////////////////////////////////////////////////
 		Thread.sleep(2000);
 		executor.executeScript("window,scrollBy(0,200)", "");
 		Select service = new Select(action_obj.Service_Status());
 		service.selectByVisibleText("Connected");
-		executor.executeScript("window,scrollBy(0,900)", "");
+		executor.executeScript("window,scrollBy(0,3000)", "");
 		action_obj.saveditserv().click();
 
 		action_obj.OKbtn().click();
@@ -451,6 +463,7 @@ public class Market_All_Cusotmer extends Login_site {
 	@Test(priority=4)
 	public void Add_Service_ND_Update() throws Exception
 	{
+		extentTest = extent.startTest("Add_Service_ND_Update");
 		action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
@@ -489,8 +502,8 @@ public class Market_All_Cusotmer extends Login_site {
 		//NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(3000);
 		// planno.selectByVisibleText("MPlan_RetailRate994");
 		//planno.selectByIndex(1);
@@ -546,9 +559,10 @@ public class Market_All_Cusotmer extends Login_site {
 		action_obj.SearchID1().sendKeys("N" + random+"33");
 		Assertion_obj.Assertion_serviceId1();
 
+		Thread.sleep(2000);
 		//Service Edit 
 		action_obj.Service_Edit().click();
-		Assertion_obj.Assertion_pageEditService();
+	//	Assertion_obj.Assertion_pageEditService();
 
 		Thread.sleep(1000);
 		// Change Service Details  
@@ -576,6 +590,7 @@ public class Market_All_Cusotmer extends Login_site {
 	@Test(priority=5)
 	public void Update_service_Commercial() throws Exception
 	{
+		extentTest = extent.startTest("Update_service_Commercial");
 		action_obj =new Repo_testing(driver);
 		Assertion_obj = new Assertion_Test(driver);  
 		executor = (JavascriptExecutor) driver;
@@ -614,8 +629,8 @@ public class Market_All_Cusotmer extends Login_site {
 		//NMI = driver.findElement(By.cssSelector("input#NMI")).getText();
 		//Thread.sleep(4000);
 		Select planno = new Select(action_obj.Service_plan());
-		//planno.selectByVisibleText("MktPlan_NetworkRate100");
-		planno.selectByIndex(2);
+		//planno.selectByVisibleText("MktPlan");
+		planno.selectByIndex(3);
 		Thread.sleep(4000);
 
 		// planno.selectByVisibleText("MPlan_RetailRate994");
@@ -671,7 +686,7 @@ public class Market_All_Cusotmer extends Login_site {
 		Thread.sleep(3000);
 		action_obj.SearchID1().sendKeys("N" + random+"44");
 		Assertion_obj.Assertion_serviceId1();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		
 	}
